@@ -9,6 +9,22 @@ package model.variables;
  */
 public class Color extends DrawingTools {
 
+	/**
+	 * La compossante rouge de la couleur, entre 0 et 255.
+	 */
+	private int R;
+	
+	/**
+	 * La compossante verte de la couleur, entre 0 et 255.
+	 */
+	private int G;
+	
+	/**
+	 * La compossante bleue de la couleur, entre 0 et 255.
+	 */
+	private int B;
+	
+	
 	public Color(String name){
 		super(name);
 	}
