@@ -29,4 +29,28 @@ public class Color extends DrawingTools {
 		super(name);
 	}
 
+	/**
+	 * Méthode qui retourne la compossante rouge de la couleur
+	 * @return 
+	 */
+	public int getR() {
+		return this.R;
+	}
+
+	/**
+	 * Méthode qui retourne la compossante verte de la couleur
+	 * @return 
+	 */
+	public int getG() {
+		return this.G;
+	}
+
+	/**
+	 * Méthode qui retourne la compossante bleue de la couleur
+	 * @return 
+	 */
+	public int getB() {
+		return this.B;
+	}
+
 }
