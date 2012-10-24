@@ -10,7 +10,7 @@ package model.variables;
 public class Circle extends Shape {
 
 	/**
-	 * Position du centre du cercle
+	 * Position du centre du cercle afgddg
 	 */
 	private Point position;
 	
