@@ -14,10 +14,9 @@ public class ForGraphics2D extends RendererGraphics2D {
 	public ForGraphics2D(){
 
 	}
-
+	
 	/**
 	 * 
-	 * @param o
 	 */
 	public void render(Object o){
 

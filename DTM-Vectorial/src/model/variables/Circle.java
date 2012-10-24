@@ -25,12 +25,19 @@ public class Circle extends Shape {
 	 * @param position
 	 * @param rayon
 	 */
+	public Circle(String name){
+		super(name);
+	}
 	public Circle(String name, Point position, double rayon){
 		super(name);
 		this.position = position;
 		this.rayon = rayon;
 	}
-
+	
+	/**
+	 * Méthode qui retourne le point du centre du cercle
+	 * @return
+	 */
 	public Point getPosition() {
 		return this.position;
 	}
