@@ -8,7 +8,7 @@ package model.variables;
  * @created 20-oct.-2012 14:32:35
  */
 public class Bezier extends Path {
-
+	// YEAH
 	public Bezier(String name){
 		super(name);
 	}
