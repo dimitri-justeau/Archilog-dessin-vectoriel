@@ -8,6 +8,7 @@ package model.variables;
  * @created 20-oct.-2012 14:32:37
  */
 public class Circle extends Shape {
+	// Tesst
 
 	/**
 	 * Position du centre du cercle afgddg
