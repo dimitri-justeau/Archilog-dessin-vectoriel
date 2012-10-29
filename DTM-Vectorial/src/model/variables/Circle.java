@@ -13,7 +13,7 @@ public class Circle extends Shape {
 	 * Position du centre du cercle afgddg
 	 */
 	private Point position;
-	
+	//NICK NOS RACES
 	/**
 	 * Rayon du cercle
 	 */
