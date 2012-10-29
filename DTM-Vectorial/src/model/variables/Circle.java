@@ -9,8 +9,41 @@ package model.variables;
  */
 public class Circle extends Shape {
 
+	/**
+	 * Position du centre du cercle afgddg
+	 */
+	private Point position;
+	//NICK NOS RACES - TITO PD
+	/**
+	 * Rayon du cercle
+	 */
+	private double rayon;
+	
+	/**
+	 * Contructeur de l'objet cercle
+	 * @param name
+	 * @param position
+	 * @param rayon
+	 */
 	public Circle(String name){
 		super(name);
+	}
+	public Circle(String name, Point position, double rayon){
+		super(name);
+		this.position = position;
+		this.rayon = rayon;
+	}
+	
+	/**
+	 * Méthode qui retourne le point du centre du cercle
+	 * @return
+	 */
+	public Point getPosition() {
+		return this.position;
+	}
+
+	public double getRayon() {
+		return this.rayon;
 	}
 
 }
