@@ -9,6 +9,8 @@ package rendering;
  */
 public abstract class RendererGraphics2D implements IInstructionRenderer {
 
+	
+	
 	public RendererGraphics2D(){
 
 	}
