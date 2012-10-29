@@ -12,12 +12,12 @@ public class Path extends Variable {
 	/**
 	 * Point de départ du chemin
 	 */
-	Point start;
+	private Point start;
 	
 	/**
 	 * Path suivante après le point de départ
 	 */
-	Path rest;
+	private Path rest;
 
 	public Path(String name){
 		super(name);

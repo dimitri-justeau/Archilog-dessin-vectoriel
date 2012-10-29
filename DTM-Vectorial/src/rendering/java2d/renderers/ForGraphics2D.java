@@ -1,5 +1,7 @@
 package rendering.java2d.renderers;
 
+import java.awt.Graphics2D;
+
 import rendering.java2d.RendererGraphics2D;
 
 
@@ -20,6 +22,12 @@ public class ForGraphics2D extends RendererGraphics2D {
 	 */
 	public void render(Object o){
 
+	}
+
+	@Override
+	public void render(Graphics2D g2d) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }

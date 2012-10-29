@@ -11,7 +11,7 @@ public class Circle extends Shape {
 	// Tesst
 
 	/**
-	 * Position du centre du cercle afgddg
+	 * Position du centre du cercle
 	 */
 	private Point position;
 	
