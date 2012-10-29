@@ -1,6 +1,6 @@
 package rendering.java2d.renderers;
 
-import rendering.RendererGraphics2D;
+import rendering.java2d.RendererGraphics2D;
 
 
 

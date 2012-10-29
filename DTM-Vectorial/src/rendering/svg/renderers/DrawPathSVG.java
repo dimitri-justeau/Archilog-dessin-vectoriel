@@ -1,6 +1,6 @@
 package rendering.svg.renderers;
 
-import rendering.RendererSVG;
+import rendering.svg.RendererSVG;
 
 
 

@@ -1,4 +1,6 @@
-package rendering;
+package rendering.java2d;
+
+import rendering.Visitor;
 
 
 

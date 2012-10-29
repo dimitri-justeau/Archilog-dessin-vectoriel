@@ -1,4 +1,6 @@
-package rendering;
+package rendering.svg;
+
+import rendering.Visitor;
 
 
 
