@@ -33,10 +33,6 @@ public class DrawPath extends Function {
 		this.color = color;
 	}
 
-	public DrawPath(Picture pic){
-		super(pic);
-	}
-
 	public Path getPath() {
 		return path;
 	}

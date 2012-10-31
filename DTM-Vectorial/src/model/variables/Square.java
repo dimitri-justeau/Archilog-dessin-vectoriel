@@ -1,7 +1,6 @@
 package model.variables;
 
-import java.util.List;
-
+import java.util.ArrayList;
 
 
 /**
@@ -11,8 +10,22 @@ import java.util.List;
  */
 public class Square extends Polygon {
 
-	public Square(String name, List<Point> points){
-		super(name, points);
+	private double width;
+	
+	/**
+	 * @param name
+	 * @param position Le point le plus en haut à gauche
+	 */
+	public Square(String name, Point position, double width){
+		super(name, null);
+		this.width = width;
+		this.points = new ArrayList<Point>();
+		this.points.add(position);
+		// TODO : Generer les 3 autres points du carré, dans un ordre cyclique
+	}
+
+	public double getWidth() {
+		return width;
 	}
 
 }
