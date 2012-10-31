@@ -1,8 +1,6 @@
 package rendering.java2d;
 
-import java.util.ArrayList;
 import java.util.LinkedHashMap;
-import java.util.List;
 import java.util.Map;
 
 import model.Model;
@@ -43,9 +41,9 @@ public class FactoryGraphics2D {
 	 * @return tous les renderer graphics2D lies aux donnees du modele
 	 * classe par picture dans une LinkedHashMap
 	 */
-	public static Map<Picture, List<RendererGraphics2D>> makeRendererGraphics2D(Model model){
-		Map<Picture, List<RendererGraphics2D>> map = 
-				new LinkedHashMap<Picture, List<RendererGraphics2D>>();
+	public static Map<Picture, PaneGraphics2D> makeRendererGraphics2D(Model model){
+		Map<Picture, PaneGraphics2D> map = 
+				new LinkedHashMap<Picture, PaneGraphics2D>();
 		for(Picture pic : model.getListPictures())
 			makeRendererGraphics2D(pic, map);
 		return map;
@@ -57,11 +55,11 @@ public class FactoryGraphics2D {
 	 * @param map
 	 */
 	private static void makeRendererGraphics2D(Picture pic,
-			Map<Picture, List<RendererGraphics2D>> map) {
-		List<RendererGraphics2D> renderer = new ArrayList<RendererGraphics2D>();
+			Map<Picture, PaneGraphics2D> map) {
+		PaneGraphics2D panel = new PaneGraphics2D();
 		for(Instruction ins : pic.getInstructions())
-			renderer.add(makeRendererFrom(ins));
-		map.put(pic, renderer);
+			panel.addRenderer(makeRendererFrom(ins));
+		map.put(pic, panel);
 	}
 
 	/**

@@ -17,8 +17,8 @@ public abstract class Visitor implements IVisitor {
 	 */
 	private Model model;
 
-	public Visitor(){
-
+	public Visitor(Model model){
+		this.model = model;
 	}
 
 	/**

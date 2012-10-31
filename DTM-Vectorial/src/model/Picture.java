@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import model.instruction.Instruction;
@@ -32,6 +33,7 @@ public class Picture {
 		this.width = width;
 		this.height = height;
 		this.name = name;
+		this.instructions = new ArrayList<Instruction>();
 	}
 
 	/**
