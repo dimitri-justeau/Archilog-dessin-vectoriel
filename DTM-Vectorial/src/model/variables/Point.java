@@ -10,15 +10,21 @@ package model.variables;
 public class Point extends Variable {
 
 	/**
-	 * La coordonn�e en abscisses du point
+	 * La coordonnée en abscisses du point
 	 */
 	private int x;
-	
+
 	/**
-	 * La coordonn�es en ordonn�es du point
+	 * La coordonnée en ordonnées du point
 	 */
 	private int y;
 
+	/**
+	 * 
+	 * @param name Le nom du point
+	 * @param x La coordonée en abscisses du point
+	 * @param y La coordonée en ordonnées du point
+	 */
 	public Point(String name, int x, int y){
 		super(name);
 		this.x = x;
@@ -26,14 +32,16 @@ public class Point extends Variable {
 	}
 
 	/**
-	 * @return La coordonn�e en abscisses du point
+	 * Méthode qui retourne le la coordonée en abscisses.
+	 * @return La coordonnée en abscisses du point
 	 */
 	public int getX() {
 		return x;
 	}
 
 	/**
-	 * @return La coordonn�e en ordonn�es du point
+	 * Méthode qui retourne le la coordonée en ordonnées.
+	 * @return La coordonnée en ordonnées du point
 	 */
 	public int getY() {
 		return y;

@@ -5,7 +5,7 @@ import model.variables.Square;
 import interpretation.Context;
 import interpretation.expressions.terminal.VariableExpression;
 /**
- * Classe abstraite pour desinner un carré
+ * Classe abstraite pour desinner un carrï¿½
  * @author Andres Gutierrez
  *
  */

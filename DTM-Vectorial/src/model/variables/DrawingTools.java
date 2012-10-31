@@ -9,6 +9,9 @@ package model.variables;
  */
 public abstract class DrawingTools extends Variable {
 
+	/**
+	 * @param name Le nom de la variable.
+	 */
 	public DrawingTools(String name){
 		super(name);
 	}

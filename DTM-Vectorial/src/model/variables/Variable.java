@@ -12,13 +12,18 @@ public abstract class Variable {
 	/**
 	 * Le nom de la variable
 	 */
-	String name;
+	private String name;
 	
+	/**
+	 * 
+	 * @param name Le nom de la variable
+	 */
 	public Variable(String name){
 		this.name = name;
 	}
 	
 	/**
+	 * Méthode qui retourne le nom de la variable.
 	 * @return Le nom de la variable
 	 */
 	public String getName(){

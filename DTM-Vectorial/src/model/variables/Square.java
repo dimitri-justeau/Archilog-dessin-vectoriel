@@ -10,22 +10,44 @@ import java.util.ArrayList;
  */
 public class Square extends Polygon {
 
-	private double width;
+	/**
+	 * La largeur du carré
+	 */
+	private double largeur;
 	
 	/**
-	 * @param name
-	 * @param position Le point le plus en haut � gauche
+	 * @param name Le nom du carré
+	 * @param position Le point le plus en haute gauche
+	 * @param width La largeur du carré
 	 */
 	public Square(String name, Point position, double width){
 		super(name, null);
-		this.width = width;
+		this.largeur = width;
 		this.points = new ArrayList<Point>();
 		this.points.add(position);
-		// TODO : Generer les 3 autres points du carr�, dans un ordre cyclique
+		int large = (int) Math.round(width);
+		Point next = new Point(position.getName() + "1",
+				position.getX(),
+				position.getY() + large);
+		this.points.add(next);
+		next = new Point(position.getName() + "2",
+				position.getX() + large,
+				position.getY());
+		this.points.add(next);
+		next = new Point(position.getName() + "2",
+				position.getX(),
+				position.getY() - large);
+		this.points.add(next);
+		this.setPoints(points);
+		
 	}
 
+	/**
+	 * Méthode qui retourne la largeur du carrée.
+	 * @return La largeur du carrée.
+	 */
 	public double getWidth() {
-		return width;
+		return largeur;
 	}
 
 }

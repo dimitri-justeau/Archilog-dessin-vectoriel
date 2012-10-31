@@ -42,8 +42,8 @@ public class DrawBezierGraphics2D extends DrawPathGraphics2D {
 		CubicCurve2D curve = new CubicCurve2D.Double();
 		Point2D[] lp = new Point2D[this.bezier.getPoints().size()];
 		for (int i = 0; i < lp.length; i++)
-			lp[i] = new Point2D.Double(bezier.getPoints().get(i).getX(), bezier
-					.getPoints().get(i).getY());
+			lp[i] = new Point2D.Double(bezier.getPoints().get(i).getX(),
+					bezier.getPoints().get(i).getY());
 		curve.setCurve(lp, 0);
 		g2d.draw(curve);
 		g2d.draw(curve);
