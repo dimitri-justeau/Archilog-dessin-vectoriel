@@ -17,7 +17,7 @@ public class DrawCircleGraphics2D extends DrawPathGraphics2D {
 	private Circle circle;
 	
 	/**
-	 * 
+	 * Le costructeur de base
 	 * @param ins
 	 */
 	public DrawCircleGraphics2D(DrawPath dp) {
