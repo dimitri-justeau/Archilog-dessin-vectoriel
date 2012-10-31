@@ -17,6 +17,17 @@ public class Bezier extends Path {
 	/** La liste des points de la courbe de Bezier */
 	private List<Point> points;
 	
+	
+	
+	/**
+	 * @param name
+	 * @param points
+	 */
+	public Bezier(String name, List<Point> points) {
+		super(name);
+		this.points = points;
+	}
+
 	public Bezier(String name){
 		super(name);
 	}

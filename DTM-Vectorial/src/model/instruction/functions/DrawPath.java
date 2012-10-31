@@ -18,6 +18,21 @@ public class DrawPath extends Function {
 	private Pen pen;
 	private Color color;
 
+	
+	
+	/**
+	 * @param pic
+	 * @param path
+	 * @param pen
+	 * @param color
+	 */
+	public DrawPath(Picture pic, Path path, Pen pen, Color color) {
+		super(pic);
+		this.path = path;
+		this.pen = pen;
+		this.color = color;
+	}
+
 	public DrawPath(Picture pic){
 		super(pic);
 	}

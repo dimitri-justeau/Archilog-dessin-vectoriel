@@ -1,5 +1,6 @@
 package rendering.svg;
 
+import model.Model;
 import rendering.Visitor;
 
 
@@ -11,10 +12,10 @@ import rendering.Visitor;
  */
 public class VisitorSVG extends Visitor {
 
-	public RendererSVG renderer;
 
-	public VisitorSVG(){
-
+	public VisitorSVG(Model model) {
+		super(model);
+		// TODO Auto-generated constructor stub
 	}
 
 	public void visitModel(){
