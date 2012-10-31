@@ -9,6 +9,7 @@ import model.Model;
 import model.Picture;
 import model.instruction.functions.DrawPath;
 import model.variables.Bezier;
+import model.variables.Circle;
 import model.variables.Color;
 import model.variables.Pen;
 import model.variables.Point;
@@ -24,6 +25,7 @@ public class TestJava2D {
 		
 		Color r = new Color("Rouge", 200, 0, 0);
 		Color b = new Color("Rouge", 0, 0, 200);
+		Color g = new Color ("Green", 0, 250, 0);
 		
 		List<Point> points = new ArrayList<Point>();
 		points.add(new Point("p1", 30, 50));
@@ -71,7 +73,13 @@ public class TestJava2D {
 						new Pen("Check ", null, b, 5), b);
 		p.addInstruction(dp4);
 		
+		Circle c = new Circle("circle", new Point("pc", 335	, 60), 10);
+		DrawPath dp = new DrawPath(p, c, new Pen ("Pen2", null, g, 10), g);
+		p.addInstruction(dp);
 		
+		Circle c2 = new Circle("circle", new Point("pc", 255, 60), 10);
+		DrawPath dpc2 = new DrawPath(p, c2, new Pen ("Pen2", null, g, 10), g);
+		p.addInstruction(dpc2);
 		
 		
 		m.putPicture(p);
