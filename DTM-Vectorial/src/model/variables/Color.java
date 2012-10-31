@@ -52,8 +52,4 @@ public class Color extends DrawingTools {
 	public int getB() {
 		return this.B;
 	}
-	public java.awt.Color getColorAwt() {
-		return new java.awt.Color(this.R, this.G, this.B);
-	}
-
 }

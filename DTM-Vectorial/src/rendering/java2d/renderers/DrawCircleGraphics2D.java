@@ -2,6 +2,8 @@ package rendering.java2d.renderers;
 
 import java.awt.Graphics2D;
 
+import rendering.java2d.Util;
+
 import model.instruction.functions.DrawPath;
 import model.variables.Circle;
 
@@ -17,7 +19,7 @@ public class DrawCircleGraphics2D extends DrawPathGraphics2D {
 	private Circle circle;
 	
 	/**
-	 * Le costructeur de base
+	 * Le constructeur de base
 	 * @param ins
 	 */
 	public DrawCircleGraphics2D(DrawPath dp) {
@@ -28,7 +30,7 @@ public class DrawCircleGraphics2D extends DrawPathGraphics2D {
 	@Override
 	public void render(Graphics2D g2d) {
 		// On specifie la couleur dans un premier temps
-		g2d.setColor(this.getDrawPath().getColor().getColorAwt());
+		g2d.setColor( Util.getColorAwt(this.getDrawPath().getColor()) );
 		//TODO
 	}
 

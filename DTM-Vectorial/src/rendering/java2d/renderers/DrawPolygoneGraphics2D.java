@@ -1,6 +1,9 @@
 package rendering.java2d.renderers;
 
+import java.awt.BasicStroke;
 import java.awt.Graphics2D;
+
+import rendering.java2d.Util;
 
 import model.instruction.functions.DrawPath;
 import model.variables.Polygon;
@@ -16,7 +19,7 @@ public class DrawPolygoneGraphics2D extends DrawPathGraphics2D{
 	 * Le polygone a tracer sur l'objet Graphics2D
 	 */
 	private Polygon polygone;
-	
+
 	/**
 	 * Constructeru classique prenant en parametre le 
 	 * drawing path du modele
@@ -30,11 +33,15 @@ public class DrawPolygoneGraphics2D extends DrawPathGraphics2D{
 	@Override
 	public void render(Graphics2D g2d) {
 		// On spécifie la couleur dans un premier temps
-		g2d.setColor(this.getDrawPath().getColor().getColorAwt());
-		// On dessine le polygone 
+		g2d.setColor( Util.getColorAwt(this.getDrawPath().getColor()) );
+		// On specifie le pinceau avec lequel dessiner
+		BasicStroke bs = new BasicStroke(this.getDrawPath().getPen().getSize());
+		g2d.setStroke(bs);
+		// On dessine le polygone sur le graphics2D
+		
 		//TODO
 	}
-	
+
 
 	/**
 	 * @return the polygone

@@ -14,6 +14,9 @@ public class Pen extends DrawingTools {
 	 */
 	private String type;
 	
+	/** La taille du pen */
+	private float size;
+	
 	/**
 	 *  
 	 * @param name Nom de la variable Pen
@@ -28,6 +31,18 @@ public class Pen extends DrawingTools {
 	 */
 	public String getType() {
 		return this.type;
+	}
+	/**
+	 * @return the size
+	 */
+	public float getSize() {
+		return size;
+	}
+	/**
+	 * @param size the size to set
+	 */
+	public void setSize(float size) {
+		this.size = size;
 	}
 
 }
