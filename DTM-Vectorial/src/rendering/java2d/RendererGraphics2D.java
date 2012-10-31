@@ -2,7 +2,6 @@ package rendering.java2d;
 
 import java.awt.Graphics2D;
 
-import model.instruction.Instruction;
 import rendering.IInstructionRenderer;
 
 
@@ -14,10 +13,13 @@ import rendering.IInstructionRenderer;
  */
 public abstract class RendererGraphics2D implements IInstructionRenderer {
 
-	
-
 	/**
-	 * 
+	 * Methode permetttant d'effectuer le rendering sur un 
+	 * certain objet 
+	 * Cette methode permet notamment de passer de l'architecture
+	 * abstraite du modele Visiteur et Rendering à l'instantiation
+	 * concraite pour le cas du Graphics2D en utilisant cet objet
+	 * directement
 	 * @param o
 	 */
 	public void render(Object o){

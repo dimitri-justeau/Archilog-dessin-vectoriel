@@ -22,4 +22,28 @@ public class DrawPath extends Function {
 		super(pic);
 	}
 
+	public Path getPath() {
+		return path;
+	}
+
+	public void setPath(Path path) {
+		this.path = path;
+	}
+
+	public Pen getPen() {
+		return pen;
+	}
+
+	public void setPen(Pen pen) {
+		this.pen = pen;
+	}
+
+	public Color getColor() {
+		return color;
+	}
+
+	public void setColor(Color color) {
+		this.color = color;
+	}
+
 }

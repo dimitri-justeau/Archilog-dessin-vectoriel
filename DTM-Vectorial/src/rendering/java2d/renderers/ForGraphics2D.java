@@ -16,18 +16,12 @@ public class ForGraphics2D extends RendererGraphics2D {
 	public ForGraphics2D(){
 
 	}
-	
-	/**
-	 * 
-	 */
-	public void render(Object o){
-
-	}
 
 	@Override
 	public void render(Graphics2D g2d) {
 		// TODO Auto-generated method stub
 		
 	}
-
+	
+	
 }

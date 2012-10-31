@@ -13,15 +13,11 @@ import rendering.java2d.RendererGraphics2D;
  */
 public class DrawSmileyGraphics2D extends RendererGraphics2D {
 
-	public DrawSmileyGraphics2D(){
-
-	}
-
 	/**
-	 * 
-	 * @param o
+	 * Le smiley a tracer sur l'objet Graphics2D
 	 */
-	public void render(Object o){
+	
+	public DrawSmileyGraphics2D(){
 
 	}
 

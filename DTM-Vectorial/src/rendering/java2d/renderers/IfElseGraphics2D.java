@@ -17,18 +17,12 @@ public class IfElseGraphics2D extends RendererGraphics2D {
 
 	}
 
-	/**
-	 * 
-	 * @param o
-	 */
-	public void render(Object o){
-
-	}
-
 	@Override
 	public void render(Graphics2D g2d) {
 		// TODO Auto-generated method stub
 		
 	}
+
+	
 
 }
