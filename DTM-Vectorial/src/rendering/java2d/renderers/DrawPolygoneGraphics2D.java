@@ -3,10 +3,10 @@ package rendering.java2d.renderers;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 
-import rendering.java2d.Util;
-
 import model.instruction.functions.DrawPath;
+import model.variables.Point;
 import model.variables.Polygon;
+import rendering.java2d.Util;
 
 /**
  * Classe qui va permettre de dessiner un polygone sur
@@ -38,8 +38,15 @@ public class DrawPolygoneGraphics2D extends DrawPathGraphics2D{
 		BasicStroke bs = new BasicStroke(this.getDrawPath().getPen().getStroke());
 		g2d.setStroke(bs);
 		// On dessine le polygone sur le graphics2D
-		
-		//TODO
+		for (int i = 0; i < polygone.getPoints().size(); i++) {
+			Point p1,p2;
+			p1 = polygone.getPoints().get(i);
+			if (i == polygone.getPoints().size() - 1)
+				p2 = polygone.getPoints().get(0);
+			else
+				p2 = polygone.getPoints().get(i+1);
+			g2d.drawLine(p1.getX(), p1.getY(), p2.getX(), p2.getY());
+		}
 	}
 
 

@@ -52,7 +52,7 @@ public class VisitorGraphics2D extends Visitor {
 			f.setContentPane(renderer.get(p));
 			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			f.setLocationRelativeTo(null);
-			f.setSize( (int)p.getHeight(), (int)p.getWidth());
+			f.setSize( (int)p.getWidth(), (int)p.getHeight());
 			f.setVisible(true);
 		}
 	}
