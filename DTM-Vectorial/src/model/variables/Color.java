@@ -25,8 +25,11 @@ public class Color extends DrawingTools {
 	private int B;
 	
 	
-	public Color(String name){
+	public Color(String name, int R, int G, int B){
 		super(name);
+		this.R = R;
+		this.G = G;
+		this.B = B;
 	}
 
 	/**

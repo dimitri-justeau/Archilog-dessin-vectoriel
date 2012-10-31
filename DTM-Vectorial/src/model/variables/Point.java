@@ -19,8 +19,10 @@ public class Point extends Variable {
 	 */
 	private int y;
 
-	public Point(String name){
+	public Point(String name, int x, int y){
 		super(name);
+		this.x = x;
+		this.y = y;
 	}
 
 	/**

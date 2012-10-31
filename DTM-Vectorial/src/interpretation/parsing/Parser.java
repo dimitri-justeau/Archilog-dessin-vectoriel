@@ -4,8 +4,6 @@ import interpretation.expressions.AbstractExpression;
 
 import java.util.List;
 
-
-
 /**
  * @author Andres Felipe Gutierrez, Amaury Ollagnier et Dimitri Justeau
  * @version 1.0
