@@ -15,8 +15,7 @@ public class EBezier extends VariableExpression {
 	}
 
 	public void interpret(Context context) {
-		Bezier var = new Bezier(this.getName());
-		context.getModel().putVariable(var);
+		
 	}
 
 }

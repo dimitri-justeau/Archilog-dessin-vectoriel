@@ -13,30 +13,13 @@ import java.util.List;
  * courbe de Bezier
  */
 public class Bezier extends Path {
-
-	/** La liste des points de la courbe de Bezier */
-	private List<Point> points;
-	
-	
 	
 	/**
 	 * @param name
 	 * @param points
 	 */
 	public Bezier(String name, List<Point> points) {
-		super(name);
-		this.points = points;
-	}
-
-	public Bezier(String name){
-		super(name);
-	}
-
-	/**
-	 * @return the points
-	 */
-	public List<Point> getPoints() {
-		return points;
+		super(name, points);
 	}
 
 	/**

@@ -10,19 +10,12 @@ import interpretation.expressions.terminal.VariableExpression;
  */
 public class ESquare extends VariableExpression {
 
-	/**
-	 * Méthode constructeur d'une Variable
-	 * @param name
-	 */
 	public ESquare(String name) {
 		super(name);
 	}
-	/**
-	 * 
-	 */
+
 	public void interpret(Context context) {
-		Square var = new Square(this.getName());
-		context.getModel().putVariable(var);
+
 	}
 
 }

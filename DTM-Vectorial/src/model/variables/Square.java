@@ -1,5 +1,7 @@
 package model.variables;
 
+import java.util.List;
+
 
 
 /**
@@ -9,8 +11,8 @@ package model.variables;
  */
 public class Square extends Polygon {
 
-	public Square(String name){
-		super(name);
+	public Square(String name, List<Point> points){
+		super(name, points);
 	}
 
 }

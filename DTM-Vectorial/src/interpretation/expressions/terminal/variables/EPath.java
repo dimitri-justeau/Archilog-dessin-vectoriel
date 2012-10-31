@@ -12,8 +12,7 @@ public class EPath extends VariableExpression {
 	}
 
 	public void interpret(Context context) {
-		Path var = new Path(this.getName());
-		context.getModel().putVariable(var);
+
 	}
 
 }

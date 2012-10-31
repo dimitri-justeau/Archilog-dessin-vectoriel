@@ -11,8 +11,7 @@ public class EShape extends VariableExpression {
 	}
 
 	public void interpret(Context context) {
-		Shape var = new Shape(this.getName());
-		context.getModel().putVariable(var);
+
 	}
 
 }

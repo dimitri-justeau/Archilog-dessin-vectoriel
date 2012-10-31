@@ -10,34 +10,13 @@ import java.util.List;
  * @created 20-oct.-2012 14:33:06
  */
 public class Polygon extends Shape {
-	
-	/**
-	 * La liste des points pour le polygone
-	 */
-	private List<Point> points;
-	
+
 	/**
 	 * Consturcteur de base
 	 * @param name
 	 */
-	public Polygon(String name){
-		super(name);
-	}
-
-	/**
-	 * @param name
-	 * @param points
-	 */
-	public Polygon(String name, List<Point> points) {
-		super(name);
-		this.points = points;
-	}
-
-	/**
-	 * @return the points
-	 */
-	public List<Point> getPoints() {
-		return points;
+	public Polygon(String name, List<Point> points){
+		super(name, points);
 	}
 
 	/**

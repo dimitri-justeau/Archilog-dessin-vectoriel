@@ -1,5 +1,7 @@
 package model.variables;
 
+import java.util.List;
+
 
 
 /**
@@ -9,8 +11,8 @@ package model.variables;
  */
 public class Shape extends Path {
 
-	public Shape(String name){
-		super(name);
+	public Shape(String name, List<Point> points){
+		super(name, points);
 	}
 
 }

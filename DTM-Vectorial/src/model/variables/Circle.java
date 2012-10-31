@@ -26,11 +26,8 @@ public class Circle extends Shape {
 	 * @param position
 	 * @param rayon
 	 */
-	public Circle(String name){
-		super(name);
-	}
 	public Circle(String name, Point position, double rayon){
-		super(name);
+		super(name, null);
 		this.position = position;
 		this.rayon = rayon;
 	}

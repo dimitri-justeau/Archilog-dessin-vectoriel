@@ -11,8 +11,7 @@ public class ECircle extends VariableExpression {
 	}
 
 	public void interpret(Context context) {
-		Circle var = new Circle(this.getName());
-		context.getModel().putVariable(var);
+
 	}
 
 }

@@ -1,5 +1,7 @@
 package model.variables;
 
+import java.util.List;
+
 
 
 /**
@@ -9,30 +11,16 @@ package model.variables;
  */
 public class Path extends Variable {
 
-	/**
-	 * Point de départ du chemin
-	 */
-	private Point start;
+	/** La liste des points du path */
+	protected List<Point> points;
 	
-	/**
-	 * Path suivante après le point de départ
-	 */
-	private Path rest;
-
-	public Path(String name){
+	public Path(String name, List<Point> points){
 		super(name);
-	}
-	
-	/**
-	 * Méthode qui retourne le point initiale du chemin
-	 * @return
-	 */
-	public Point getStart() {
-		return this.start;
+		this.points = points;
 	}
 
-	public Path getRest() {
-		return this.rest;
+	public List<Point> getPoints(){
+		return this.points;
 	}
 
 }

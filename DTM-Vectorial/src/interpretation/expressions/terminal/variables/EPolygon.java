@@ -11,8 +11,7 @@ public class EPolygon extends VariableExpression {
 	}
 
 	public void interpret(Context context) {
-		Polygon var = new Polygon(this.getName());
-		context.getModel().putVariable(var);
+
 	}
 
 }
