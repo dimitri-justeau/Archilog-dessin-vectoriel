@@ -23,7 +23,14 @@ public class Picture {
 	 */
 	private String name;
 
-	public Picture(String name){
+	/**
+	 * Les dimensions de la picture
+	 */
+	private double width, height;
+	
+	public Picture(String name, double width, double height){
+		this.width = width;
+		this.height = height;
 		this.name = name;
 	}
 
@@ -33,6 +40,20 @@ public class Picture {
 	public String getName(){
 		return this.name;
 	}
+	
+	/**
+	 * @return La largeur de la picture (pixels)
+	 */
+	public double getWidth() {
+		return width;
+	}
+
+	/**
+	 * @return La hauteur de la picture (pixels)
+	 */
+	public double getHeight() {
+		return height;
+	}
 
 	/**
 	 * @return Les instructions appliquées sur la picture
@@ -41,4 +62,11 @@ public class Picture {
 		return instructions;
 	}
 
+	/**
+	 * Ajoute une instruction à la picture
+	 * @param instruction
+	 */
+	public void addInstruction(Instruction instruction){
+		this.instructions.add(instruction);
+	}
 }

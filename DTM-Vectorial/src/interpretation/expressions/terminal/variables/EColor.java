@@ -6,12 +6,17 @@ import interpretation.expressions.terminal.VariableExpression;
 
 public class EColor extends VariableExpression {
 
-	public EColor(String name) {
+	int R,G,B;
+	
+	public EColor(String name, int R, int G, int B) {
 		super(name);
+		this.R = R;
+		this.G = G;
+		this.B = B;
 	}
 
 	public void interpret(Context context) {
-		Color var = new Color(this.getName());
+		Color var = new Color(name, R, G, B);
 		context.getModel().putVariable(var);
 	}
 

@@ -35,7 +35,7 @@ public class DrawPolygoneGraphics2D extends DrawPathGraphics2D{
 		// On spécifie la couleur dans un premier temps
 		g2d.setColor( Util.getColorAwt(this.getDrawPath().getColor()) );
 		// On specifie le pinceau avec lequel dessiner
-		BasicStroke bs = new BasicStroke(this.getDrawPath().getPen().getSize());
+		BasicStroke bs = new BasicStroke(this.getDrawPath().getPen().getStroke());
 		g2d.setStroke(bs);
 		// On dessine le polygone sur le graphics2D
 		

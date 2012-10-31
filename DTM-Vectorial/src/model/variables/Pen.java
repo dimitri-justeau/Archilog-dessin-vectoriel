@@ -14,17 +14,29 @@ public class Pen extends DrawingTools {
 	 */
 	private String type;
 	
-	/** La taille du pen */
-	private float size;
+
+	/**
+	 * La couleur de tracé
+	 */
+	private Color color;
+	
+	/**
+	 * L'épaisseur du tracé
+	 */
+	private int stroke;
 	
 	/**
 	 *  
 	 * @param name Nom de la variable Pen
 	 */
 	
-	public Pen(String name){
+	public Pen(String name, String type, Color color, int stroke){
 		super(name);
+		this.type = type;
+		this.color = color;
+		this.stroke = stroke;
 	}
+	
 	/**
 	 * Méthode qui retourne le type de stylo à utiliser
 	 * @return
@@ -32,17 +44,19 @@ public class Pen extends DrawingTools {
 	public String getType() {
 		return this.type;
 	}
+
 	/**
-	 * @return the size
+	 * @return La couleur de tracé
 	 */
-	public float getSize() {
-		return size;
+	public Color getColor() {
+		return color;
 	}
+
 	/**
-	 * @param size the size to set
+	 * @return L'epaisseur de tracé
 	 */
-	public void setSize(float size) {
-		this.size = size;
+	public int getStroke() {
+		return stroke;
 	}
 
 }

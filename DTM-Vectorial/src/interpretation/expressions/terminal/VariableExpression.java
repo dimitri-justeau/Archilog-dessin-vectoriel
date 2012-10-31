@@ -11,7 +11,7 @@ public abstract class VariableExpression extends TerminalExpression {
 	/** 
 	 * Le nom de la variable correspondante
 	 */
-	private String name;
+	protected String name;
 	
 	public VariableExpression(String name){
 		this.name = name;

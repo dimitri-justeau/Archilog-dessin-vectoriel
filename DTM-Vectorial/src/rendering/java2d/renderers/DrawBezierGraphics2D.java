@@ -36,7 +36,7 @@ public class DrawBezierGraphics2D extends DrawPathGraphics2D {
 		// On specifie la couleur dans un premier temps
 		g2d.setColor( Util.getColorAwt(this.getDrawPath().getColor()) );
 		// On specifie le pinceau avec lequel dessiner
-		BasicStroke bs = new BasicStroke(this.getDrawPath().getPen().getSize());
+		BasicStroke bs = new BasicStroke(this.getDrawPath().getPen().getStroke());
 		g2d.setStroke(bs);
 		// On dessine la courbe de Bezier
 		CubicCurve2D curve = new CubicCurve2D.Double();
