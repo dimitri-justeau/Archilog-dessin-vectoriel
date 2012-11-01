@@ -21,9 +21,18 @@ public class For extends Operator {
 	 * L'instruction que l'on doit repeter
 	 */
 	private Instruction toRepeat;
+	
 
-	public For(Picture pic){
+	
+	/**
+	 * @param pic
+	 * @param repeats
+	 * @param toRepeat
+	 */
+	public For(Picture pic, int repeats, Instruction toRepeat) {
 		super(pic);
+		this.repeats = repeats;
+		this.toRepeat = toRepeat;
 	}
 
 	/**

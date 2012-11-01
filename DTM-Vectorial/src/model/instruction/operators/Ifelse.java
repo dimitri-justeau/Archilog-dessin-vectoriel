@@ -28,8 +28,20 @@ public class Ifelse extends Operator {
 	 */
 	private boolean isTrue;
 
-	public Ifelse(Picture pic){
+	
+	/**
+	 * @param pic
+	 * @param ifTrue
+	 * @param ifFalse
+	 * @param isTrue
+	 */
+	public Ifelse(Picture pic, Instruction ifTrue,
+			Instruction ifFalse,
+			boolean isTrue) {
 		super(pic);
+		this.ifTrue = ifTrue;
+		this.ifFalse = ifFalse;
+		this.isTrue = isTrue;
 	}
 
 	/**

@@ -1,7 +1,6 @@
 package rendering.java2d;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +12,7 @@ import javax.swing.JPanel;
  */
 public class PaneGraphics2D extends JPanel{
 
+	private static final long serialVersionUID = 1L;
 	/**
 	 * La liste des renderers Graphics2D a dessiner
 	 * sur le Panel ou la picture 
