@@ -68,7 +68,7 @@ public class FactoryGraphics2D {
 	 * @param ins
 	 * @return
 	 */
-	private static RendererGraphics2D makeRendererFrom(Instruction ins) {
+	public static RendererGraphics2D makeRendererFrom(Instruction ins) {
 		if ( ins instanceof Operator){
 			
 		} 

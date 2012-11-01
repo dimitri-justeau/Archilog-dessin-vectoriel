@@ -12,12 +12,68 @@ import model.instruction.Operator;
  */
 public class Ifelse extends Operator {
 
+	/**
+	 * l'instruction a faire si la condition est vraie
+	 */
 	private Instruction ifTrue;
+	
+	/**
+	 * l'instruction a faire sir la condition est
+	 * fausse
+	 */
 	private Instruction ifFalse;
+	
+	/**
+	 * La condition
+	 */
 	private boolean isTrue;
 
 	public Ifelse(Picture pic){
 		super(pic);
 	}
+
+	/**
+	 * @return the ifTrue
+	 */
+	public Instruction getIfTrue() {
+		return ifTrue;
+	}
+
+	/**
+	 * @param ifTrue the ifTrue to set
+	 */
+	public void setIfTrue(Instruction ifTrue) {
+		this.ifTrue = ifTrue;
+	}
+
+	/**
+	 * @return the ifFalse
+	 */
+	public Instruction getIfFalse() {
+		return ifFalse;
+	}
+
+	/**
+	 * @param ifFalse the ifFalse to set
+	 */
+	public void setIfFalse(Instruction ifFalse) {
+		this.ifFalse = ifFalse;
+	}
+
+	/**
+	 * @return the isTrue
+	 */
+	public boolean isTrue() {
+		return isTrue;
+	}
+
+	/**
+	 * @param isTrue the isTrue to set
+	 */
+	public void setTrue(boolean isTrue) {
+		this.isTrue = isTrue;
+	}
+	
+	
 
 }
