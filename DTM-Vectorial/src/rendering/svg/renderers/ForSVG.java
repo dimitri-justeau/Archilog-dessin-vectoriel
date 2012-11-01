@@ -1,5 +1,10 @@
 package rendering.svg.renderers;
 
+import java.awt.Graphics2D;
+
+import model.instruction.operators.For;
+
+import rendering.svg.FactorySVG;
 import rendering.svg.RendererSVG;
 
 
@@ -11,16 +16,26 @@ import rendering.svg.RendererSVG;
  */
 public class ForSVG extends RendererSVG {
 
-	public ForSVG(){
-
-	}
-
 	/**
-	 * 
-	 * @param o
+	 * L'objet du modele que nous allons 
+	 * parcourir
 	 */
-	public void render(Object o){
-
+	private For loopFor;
+	
+	public ForSVG(For f){
+		loopFor = f;
 	}
+
+	@Override
+	public void render(Graphics2D g2d) {
+		// TODO Auto-generated method stub
+		RendererSVG r = FactorySVG.makeRendererFrom(loopFor.getToRepeat());
+		for (int i = 0; i < loopFor.getRepeats(); i++) {
+			r.render(g2d);
+		}
+		
+	}
+
+
 
 }

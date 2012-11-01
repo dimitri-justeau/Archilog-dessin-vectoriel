@@ -31,12 +31,12 @@ public class Square extends Polygon {
 				position.getY() + large);
 		this.points.add(next);
 		next = new Point(position.getName() + "2",
-				position.getX() + large,
-				position.getY());
+				next.getX() + large,
+				next.getY());
 		this.points.add(next);
-		next = new Point(position.getName() + "2",
-				position.getX(),
-				position.getY() - large);
+		next = new Point(position.getName() + "3",
+				next.getX(),
+				next.getY() - large);
 		this.points.add(next);
 		this.setPoints(points);
 		

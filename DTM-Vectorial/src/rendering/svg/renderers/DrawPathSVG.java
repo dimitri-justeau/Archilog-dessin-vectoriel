@@ -1,5 +1,6 @@
 package rendering.svg.renderers;
 
+import model.instruction.functions.DrawPath;
 import rendering.svg.RendererSVG;
 
 
@@ -9,18 +10,25 @@ import rendering.svg.RendererSVG;
  * @version 1.0
  * @created 20-oct.-2012 14:32:44
  */
-public class DrawPathSVG extends RendererSVG {
-
-	public DrawPathSVG(){
-
-	}
+public abstract class DrawPathSVG extends RendererSVG {
 
 	/**
-	 * 
-	 * @param o
+	 * L'objet DrawPath du modele contenant toutes les informations
+	 * sur le trace a effectuer
 	 */
-	public void render(Object o){
+	private DrawPath drawPath;
+	
+	public DrawPathSVG(DrawPath dp){
+		super();
+		this.setDrawPath(dp);
+	}
 
+	public DrawPath getDrawPath() {
+		return drawPath;
+	}
+
+	public void setDrawPath(DrawPath drawPath) {
+		this.drawPath = drawPath;
 	}
 
 }

@@ -1,5 +1,9 @@
 package rendering.svg.renderers;
 
+import java.awt.Graphics2D;
+
+import model.instruction.operators.Ifelse;
+
 import rendering.svg.RendererSVG;
 
 
@@ -11,7 +15,7 @@ import rendering.svg.RendererSVG;
  */
 public class IfElseSVG extends RendererSVG {
 
-	public IfElseSVG(){
+	public IfElseSVG(Ifelse ie){
 
 	}
 
@@ -21,6 +25,12 @@ public class IfElseSVG extends RendererSVG {
 	 */
 	public void render(Object o){
 
+	}
+
+	@Override
+	public void render(Graphics2D g2d) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
