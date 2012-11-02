@@ -2,7 +2,6 @@ package interpretation;
 
 import interpretation.expressions.AbstractExpression;
 import interpretation.parsing.Parser;
-import interpretation.parsing.SimpleParser;
 
 import java.util.List;
 
@@ -22,6 +21,11 @@ public class Client {
 	 * Le contexte sur lequel évaluer les expressions
 	 */
 	private Context context;
+	
+	/**
+	 * Le parseur utilisé pour la lecture du script
+	 */
+	private Parser parser;
 
 	/**
 	 * Constructeur prenant en compte le contexte sur lequel agir
@@ -29,12 +33,25 @@ public class Client {
 	 * @param context
 	 * @param file
 	 */
-	public Client(Context context, String file){
+	public Client(Context context, Parser parser, String file){
 		this.context = context;
-		Parser p = new SimpleParser();
-		this.expressionTree = p.parse(file);
+		this.parser = parser;
+		try {
+			this.expressionTree = this.parser.parse(file);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 
+	public void reLoad(String file){
+		this.context.reset();
+		try {
+			this.expressionTree = this.parser.parse(file);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 	/**
 	 * Evalue les expression de l'arbre d'expressions
 	 */
@@ -43,5 +60,5 @@ public class Client {
 			e.interpret(this.context);
 		}
 	}
-
+	
 }

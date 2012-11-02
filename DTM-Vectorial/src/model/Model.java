@@ -90,5 +90,10 @@ public class Model {
 	public void putPicture(Picture pic){
 		this.pictures.put(pic.getName(), pic);
 	}
+	
+	public void reset(){
+		this.variables = new HashMap<String, Variable>();
+		this.pictures = new HashMap<String, Picture>();
+	}
 
 }

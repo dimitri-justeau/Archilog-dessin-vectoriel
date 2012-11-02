@@ -24,4 +24,8 @@ public class Context {
 	public Model getModel(){
 		return this.model;
 	}
+	
+	public void reset(){
+		this.model.reset();
+	}
 }

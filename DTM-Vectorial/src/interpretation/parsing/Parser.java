@@ -12,9 +12,12 @@ import java.util.List;
 public interface Parser {
 
 	/**
-	 * 
+	 * Parse un fichier correspondant à un script et renvoie 
+	 * l'abre d'expressions correspondant à celui-ci
 	 * @param file
+	 * @throws Exception 
 	 */
-	public List<AbstractExpression> parse(String file);
+	public List<AbstractExpression> parse(String file) 
+			throws Exception;
 
 }
