@@ -1,12 +1,9 @@
 package rendering.svg;
 
 import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.util.ArrayList;
 import java.util.List;
 import org.apache.batik.swing.JSVGCanvas;
-
-import rendering.java2d.RendererGraphics2D;
 
 
 public class PaneGraphicsSVG extends JSVGCanvas{
