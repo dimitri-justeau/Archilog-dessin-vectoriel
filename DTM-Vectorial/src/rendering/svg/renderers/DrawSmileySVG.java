@@ -1,5 +1,7 @@
 package rendering.svg.renderers;
 
+import java.awt.Graphics2D;
+
 import rendering.svg.RendererSVG;
 
 
@@ -21,6 +23,12 @@ public class DrawSmileySVG extends RendererSVG {
 	 */
 	public void render(Object o){
 
+	}
+
+	@Override
+	public void render(Graphics2D g2d) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
