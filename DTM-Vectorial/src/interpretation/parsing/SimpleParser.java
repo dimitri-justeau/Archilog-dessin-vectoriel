@@ -2,15 +2,12 @@ package interpretation.parsing;
 
 import interpretation.expressions.AbstractExpression;
 
-import java.io.FileInputStream;
-import java.io.InputStream;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import org.apache.commons.io.IOUtils;
 
 public class SimpleParser implements Parser{
 
@@ -21,9 +18,9 @@ public class SimpleParser implements Parser{
 	
 	public List<AbstractExpression> parse(String file) throws Exception {
 		List<AbstractExpression> retour = new ArrayList<AbstractExpression>();
-		
-		InputStream stream = new FileInputStream(file);
-		this.script = IOUtils.toString(stream).trim();
+				
+		Scanner sc = new Scanner(new File(file)).useDelimiter("\\A");
+		this.script = sc.hasNext()? sc.next() : "";
 		
 		while(!(this.script.isEmpty())){
 			retour.add(this.nextInstruction());
@@ -74,13 +71,7 @@ public class SimpleParser implements Parser{
 		}
 		
 		// On supprime du script ce qui a déjà été parsé
-		this.script = "";
-		while(sc.hasNextLine()){
-			this.script += sc.nextLine();
-			if(sc.hasNextLine()){
-				this.script += "\n";
-			}
-		}
+		this.script = sc.hasNext()? sc.useDelimiter("\\A").next() : "";
 		return retour;
 	}
 	
