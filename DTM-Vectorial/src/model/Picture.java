@@ -3,7 +3,6 @@ package model;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.instruction.Instruction;
 
 
 
@@ -12,7 +11,7 @@ import model.instruction.Instruction;
  * @version 1.0
  * @created 20-oct.-2012 14:33:04
  */
-public class Picture {
+public class Picture extends ModelObject{
 
 	/**
 	 * Les instructions appliquées sur la picture

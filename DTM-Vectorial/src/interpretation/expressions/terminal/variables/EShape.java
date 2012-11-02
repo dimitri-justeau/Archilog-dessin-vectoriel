@@ -3,6 +3,7 @@ package interpretation.expressions.terminal.variables;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.ModelObject;
 import model.variables.Point;
 import model.variables.Shape;
 
@@ -18,14 +19,15 @@ public class EShape extends VariableExpression {
 		this.points = points;
 	}
 
-	public void interpret(Context context) {
+	public List<ModelObject> generateModelObject(Context context) {
 		List<Point> pts = new ArrayList<Point>();
 		for(String p : points){
 			Point pt = (Point) context.getModel().getVariable(p);
 			pts.add(pt);
 		}
-		Shape shape = new Shape(name, pts);
-		context.getModel().putVariable(shape);
+		List<ModelObject> list = new ArrayList<ModelObject>();
+		list.add(new Shape(name, pts));
+		return list;
 	}
 
 }

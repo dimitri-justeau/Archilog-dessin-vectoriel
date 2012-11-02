@@ -2,6 +2,8 @@ package model.variables;
 
 import java.util.List;
 
+import model.Variable;
+
 
 
 /**

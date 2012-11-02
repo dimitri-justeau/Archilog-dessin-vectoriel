@@ -1,5 +1,6 @@
 package model.instruction;
 
+import model.Instruction;
 import model.Picture;
 
 

@@ -1,5 +1,7 @@
 package model.variables;
 
+import model.Variable;
+
 
 
 /**

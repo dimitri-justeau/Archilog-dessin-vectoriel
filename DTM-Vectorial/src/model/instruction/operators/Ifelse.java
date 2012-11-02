@@ -1,6 +1,6 @@
 package model.instruction.operators;
+import model.Instruction;
 import model.Picture;
-import model.instruction.Instruction;
 import model.instruction.Operator;
 
 

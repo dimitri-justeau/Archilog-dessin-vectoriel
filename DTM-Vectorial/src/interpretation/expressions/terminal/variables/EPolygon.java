@@ -3,6 +3,7 @@ package interpretation.expressions.terminal.variables;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.ModelObject;
 import model.variables.Point;
 import model.variables.Polygon;
 import interpretation.Context;
@@ -17,14 +18,15 @@ List<String> points;
 		this.points = points;
 	}
 
-	public void interpret(Context context) {
+	public List<ModelObject> generateModelObject(Context context) {
 		List<Point> pts = new ArrayList<Point>();
 		for(String p : points){
 			Point pt = (Point) context.getModel().getVariable(p);
 			pts.add(pt);
 		}
-		Polygon poly = new Polygon(name, pts);
-		context.getModel().putVariable(poly);
+		List<ModelObject> list = new ArrayList<ModelObject>();
+		list.add(new Polygon(name, pts));
+		return list;
 	}
 
 }

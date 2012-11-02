@@ -1,4 +1,4 @@
-package model.variables;
+package model;
 
 
 
@@ -7,7 +7,7 @@ package model.variables;
  * @version 1.0
  * @created 20-oct.-2012 14:33:13
  */
-public abstract class Variable {
+public abstract class Variable extends ModelObject{
 
 	/**
 	 * Le nom de la variable

@@ -1,5 +1,9 @@
 package interpretation.expressions.terminal.variables;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import model.ModelObject;
 import model.variables.Color;
 import model.variables.Pen;
 import interpretation.Context;
@@ -17,10 +21,11 @@ public class EPen extends VariableExpression {
 		this.stroke = stroke;
 	}
 
-	public void interpret(Context context) {
+	public List<ModelObject> generateModelObject(Context context) {
 		Color c = (Color) context.getModel().getVariable(color);
-		Pen p = new Pen(name, type, c, stroke);
-		context.getModel().putVariable(p);
+		List<ModelObject> list = new ArrayList<ModelObject>();
+		list.add(new Pen(name, type, c, stroke));
+		return list;
 	}
 
 }

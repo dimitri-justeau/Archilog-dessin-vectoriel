@@ -1,6 +1,9 @@
 package model.instruction.operators;
+import java.util.ArrayList;
+import java.util.List;
+
+import model.Instruction;
 import model.Picture;
-import model.instruction.Instruction;
 import model.instruction.Operator;
 
 
@@ -18,22 +21,31 @@ public class For extends Operator {
 	private int repeats;
 	
 	/**
-	 * L'instruction que l'on doit repeter
+	 * Les instructions que l'on doit repeter
 	 */
-	private Instruction toRepeat;
-	
-
+	private List<Instruction> instructionBloc;
 	
 	/**
 	 * @param pic
 	 * @param repeats
 	 * @param toRepeat
 	 */
+	@Deprecated
 	public For(Picture pic, int repeats, Instruction toRepeat) {
 		super(pic);
 		this.repeats = repeats;
-		this.toRepeat = toRepeat;
+		this.instructionBloc = new ArrayList<Instruction>();
+		this.instructionBloc.add(toRepeat);
 	}
+	
+
+	public For(Picture pic, int repeats, List<Instruction> instructionBloc) {
+		super(pic);
+		this.repeats = repeats;
+		this.instructionBloc = instructionBloc;
+	}
+
+
 
 	/**
 	 * @return the repeats
@@ -52,17 +64,32 @@ public class For extends Operator {
 	/**
 	 * @return the toRepeat
 	 */
+	@Deprecated
 	public Instruction getToRepeat() {
-		return toRepeat;
+		return instructionBloc.get(0);
 	}
 
 	/**
 	 * @param toRepeat the toRepeat to set
 	 */
+	@Deprecated
 	public void setToRepeat(Instruction toRepeat) {
-		this.toRepeat = toRepeat;
+		this.instructionBloc.add(0, toRepeat);
 	}
 	
-	
+	/**
+	 * @return Le bloc d'instruction à répéter
+	 */
+	public List<Instruction> getInstructionBloc(){
+		return this.instructionBloc;
+	}
+
+	/**
+	 * Rajoute une instruction au bloc d'instructions à répéter
+	 * @param i
+	 */
+	public void addInstruction(Instruction i){
+		this.instructionBloc.add(i);
+	}
 
 }

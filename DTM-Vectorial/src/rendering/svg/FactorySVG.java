@@ -3,10 +3,10 @@ package rendering.svg;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import model.Instruction;
 import model.Model;
 import model.Picture;
 import model.instruction.Function;
-import model.instruction.Instruction;
 import model.instruction.Operator;
 import model.instruction.functions.DrawPath;
 import model.instruction.functions.DrawSmiley;

@@ -1,5 +1,9 @@
 package interpretation.expressions.terminal.variables;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import model.ModelObject;
 import model.variables.Circle;
 import model.variables.Point;
 import interpretation.Context;
@@ -16,10 +20,11 @@ public class ECircle extends VariableExpression {
 		this.rayon = rayon;
 	}
 
-	public void interpret(Context context) {
+	public List<ModelObject> generateModelObject(Context context) {
 		Point center = (Point) context.getModel().getVariable(position);
-		Circle var = new Circle(name, center, rayon);
-		context.getModel().putVariable(var);
+		List<ModelObject> list = new ArrayList<ModelObject>();
+		list.add(new Circle(name, center, rayon));
+		return list;
 	}
 
 }

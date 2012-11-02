@@ -1,5 +1,9 @@
 package interpretation.expressions.terminal.variables;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import model.ModelObject;
 import model.variables.Point;
 import model.variables.Square;
 import interpretation.Context;
@@ -20,10 +24,11 @@ public class ESquare extends VariableExpression {
 		this.width = width;
 	}
 
-	public void interpret(Context context) {
+	public List<ModelObject> generateModelObject(Context context) {
 		Point pos = (Point) context.getModel().getVariable(position);
-		Square var = new Square(name, pos, width);
-		context.getModel().putVariable(var);
+		List<ModelObject> list = new ArrayList<ModelObject>();
+		list.add(new Square(name, pos, width));
+		return list;
 	}
 
 }

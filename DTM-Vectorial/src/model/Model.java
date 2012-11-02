@@ -5,7 +5,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import model.variables.Variable;
 
 
 /**
@@ -28,6 +27,20 @@ public class Model {
 	public Model(){
 		this.variables = new HashMap<String, Variable>();
 		this.pictures = new HashMap<String, Picture>();
+	}
+	
+	/**
+	 * Constructeur par recopie non profonde (références)
+	 * @param m
+	 */
+	public Model(Model m){
+		this();
+		for(Variable v : m.getListVariables()){
+			this.putVariable(v);
+		}
+		for(Picture p : m.getListPictures()){
+			this.putPicture(p);
+		}
 	}
 
 	/**

@@ -3,6 +3,7 @@ package interpretation.expressions.terminal.variables;
 import java.util.ArrayList;
 import java.util.List;
 
+import model.ModelObject;
 import model.variables.Bezier;
 import model.variables.Point;
 
@@ -21,14 +22,15 @@ public class EBezier extends VariableExpression {
 		super(name);
 		this.points = points;	}
 
-	public void interpret(Context context) {
+	public List<ModelObject> generateModelObject(Context context) {
 		List<Point> pts = new ArrayList<Point>();
 		for(String p : points){
 			Point pt = (Point) context.getModel().getVariable(p);
 			pts.add(pt);
 		}
-		Bezier bezier = new Bezier(name, pts);
-		context.getModel().putVariable(bezier);
+		List<ModelObject> list = new ArrayList<ModelObject>();
+		list.add(new Bezier(name, pts));
+		return list;
 	}
 
 }

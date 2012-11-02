@@ -1,5 +1,9 @@
 package interpretation.expressions.terminal.variables;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import model.ModelObject;
 import model.variables.Color;
 import interpretation.Context;
 import interpretation.expressions.terminal.VariableExpression;
@@ -15,9 +19,10 @@ public class EColor extends VariableExpression {
 		this.B = B;
 	}
 
-	public void interpret(Context context) {
-		Color var = new Color(name, R, G, B);
-		context.getModel().putVariable(var);
+	public List<ModelObject> generateModelObject(Context context) {
+		List<ModelObject> list = new ArrayList<ModelObject>();
+		list.add(new Color(name, R, G, B));
+		return list;
 	}
 
 }

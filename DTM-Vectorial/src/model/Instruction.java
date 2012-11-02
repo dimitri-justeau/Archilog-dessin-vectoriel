@@ -1,6 +1,5 @@
-package model.instruction;
+package model;
 
-import model.Picture;
 
 
 
@@ -9,7 +8,7 @@ import model.Picture;
  * @version 1.0
  * @created 20-oct.-2012 14:32:53
  */
-public abstract class Instruction {
+public abstract class Instruction extends ModelObject{
 
 	/**
 	 * La picture sur laquelle s'applique l'instruction
