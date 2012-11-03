@@ -19,6 +19,9 @@ public class PaneGraphicsSVG extends JSVGCanvas{
 	 */
 	private List<RendererSVG> renderers;
 	
+	/**
+	 * Nom de fichier où on gardera les informations du dessin-
+	 */
 	private String nom;
 	/**
 	 * 
@@ -40,14 +43,16 @@ public class PaneGraphicsSVG extends JSVGCanvas{
 	}
 	
 	/**
-	 * Methode permettant d'ajouter le renderer
-	 * au panel
+	 * Methode permettant d'ajouter un renderer
 	 * @param r
 	 */
 	public void addRenderer( RendererSVG r ){
 		renderers.add(r);
 	}
-	
+	/**
+	 * Méthode permettant d'ajouter chaque renderer
+	 * dans le fichier nom.
+	 */
 	public void paintComponent() {
 		// On lance tous les renderers sur le SVGgraphics2D
 		try {
@@ -57,7 +62,6 @@ public class PaneGraphicsSVG extends JSVGCanvas{
 			}
 			graphics.stream(this.nom);
 
-		
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();

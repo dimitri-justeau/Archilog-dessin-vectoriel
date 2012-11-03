@@ -11,15 +11,16 @@ import org.apache.batik.svggen.SVGGraphics2D;
 import rendering.java2d.Util;
 
 public class DrawPolygoneSvg extends DrawPathSVG{
+	
 	/**
-	 * Le polygone a tracer sur l'objet Graphics2D
+	 * Le polygone à tracer sur le modele.
 	 */
 	private Polygon polygone;
 
 	/**
 	 * Constructeru classique prenant en parametre le 
 	 * drawing path du modele
-	 * @param dp
+	 * @param dp drawing path du modele
 	 */
 	public DrawPolygoneSvg(DrawPath dp) {
 		super(dp);
@@ -47,6 +48,7 @@ public class DrawPolygoneSvg extends DrawPathSVG{
 
 
 	/**
+	 * Méthode qui retourne le polygone associé.
 	 * @return the polygone
 	 */
 	public Polygon getPolygone() {
@@ -54,6 +56,7 @@ public class DrawPolygoneSvg extends DrawPathSVG{
 	}
 
 	/**
+	 * Méthode qui permet de changer le polygone associé.
 	 * @param polygone the polygone to set
 	 */
 	public void setPolygone(Polygon polygone) {

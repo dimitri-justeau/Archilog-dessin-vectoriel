@@ -13,14 +13,13 @@ import rendering.java2d.Util;
 public class DrawCircleSvg extends DrawPathSVG{
 	
 	/**
-	 * Le cercle a dessiner
+	 * Le cercle à tracer sur le modele
 	 */
 	private Circle circle;
 
 	/**
-	 * Le constructeur de base
-	 * 
-	 * @param ins
+	 *  Constructeur classique prenant en parametre le drawing path du modele.
+	 * @param dp drawing path du modele
 	 */
 	public DrawCircleSvg(DrawPath dp) {
 		super(dp);
@@ -45,6 +44,7 @@ public class DrawCircleSvg extends DrawPathSVG{
 	}
 
 	/**
+	 * Méthode qui retourne le circle à dessiner.
 	 * @return the circle
 	 */
 	public Circle getCircle() {
@@ -52,8 +52,8 @@ public class DrawCircleSvg extends DrawPathSVG{
 	}
 
 	/**
-	 * @param circle
-	 *            the circle to set
+	 * Méthode qui permet de changer le cercle associé.
+	 * @param circle le cercle à associer.
 	 */
 	public void setCircle(Circle circle) {
 		this.circle = circle;

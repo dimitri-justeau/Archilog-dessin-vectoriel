@@ -21,6 +21,9 @@ import rendering.Visitor;
  */
 public class VisitorSVG extends Visitor {
 
+	/**
+	 * Le Map de tous les dessins chacun ayant un PaneGraphicsSVG associé.
+	 */
 	private Map<Picture, PaneGraphicsSVG> renderer;
 
 	public VisitorSVG(Model model) {

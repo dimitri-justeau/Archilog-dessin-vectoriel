@@ -6,6 +6,7 @@ import model.instruction.operators.For;
 import org.apache.batik.svggen.SVGGraphics2D;
 
 import rendering.java2d.FactoryGraphics2D;
+import rendering.svg.FactorySVG;
 import rendering.svg.RendererSVG;
 
 
@@ -23,6 +24,10 @@ public class ForSVG extends RendererSVG {
 	 */
 	private For loopFor;
 	
+	/**
+	 * 
+	 * @param f
+	 */
 	public ForSVG(For f){
 		loopFor = f;
 	}
@@ -30,7 +35,7 @@ public class ForSVG extends RendererSVG {
 	@Override
 	public void render(SVGGraphics2D g2d) {
 		for(Instruction inst : loopFor.getInstructionBloc())
-			FactoryGraphics2D.makeRendererFrom(inst).render(g2d);
+			FactorySVG.makeRendererFrom(inst).render(g2d);
 	}
 
 

@@ -13,14 +13,13 @@ import rendering.java2d.Util;
 
 public class DrawBezierSvg extends DrawPathSVG{
 	/**
-	 * La courbe de Bezier a tracer sur le modele
+	 * La courbe de Bezier à tracer sur le modele
 	 */
 	private Bezier bezier;
 
 	/**
 	 * Constructeur classique prenant en parametre le drawing path du modele
-	 * 
-	 * @param dp
+	 * @param dp drawing path du modele
 	 */
 	public DrawBezierSvg(DrawPath dp) {
 		super(dp);
@@ -47,15 +46,16 @@ public class DrawBezierSvg extends DrawPathSVG{
 	}
 
 	/**
-	 * @return the bezier
+	 * Méthode qui retourne la courbe de Bezier.
+	 * @return La courbe de Bezier.
 	 */
 	public Bezier getBezier() {
 		return bezier;
 	}
 
 	/**
-	 * @param bezier
-	 *            the bezier to set
+	 * Méthode qui permet de changer la courbe de Bezier associé.
+	 * @param bezier La nouvelle courbe à associer.
 	 */
 	public void setBezier(Bezier bezier) {
 		this.bezier = bezier;

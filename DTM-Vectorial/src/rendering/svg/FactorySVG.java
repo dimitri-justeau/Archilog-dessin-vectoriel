@@ -40,7 +40,7 @@ public class FactorySVG {
 	/**
 	 * Methode de factory
 	 * @param model
-	 * @return tous les renderer graphics2D lies aux donnees du modele
+	 * @return tous les renderer SVGgraphics2D lies aux donnees du modele
 	 * classe par picture dans une LinkedHashMap
 	 */
 	public static Map<Picture, PaneGraphicsSVG> makeRendererGraphicsSVG(Model model){
@@ -65,8 +65,8 @@ public class FactorySVG {
 	}
 
 	/**
-	 * Methode qui va retourner le renderer graphics 2D
-	 * associe a l'instruction en parametre du modele
+	 * Methode qui va retourner le renderer SVG
+	 * associe a l'instruction en parametre du modele.
 	 * @param ins
 	 * @return
 	 */
