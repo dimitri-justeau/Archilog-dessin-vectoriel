@@ -24,7 +24,7 @@ public class EPen extends VariableExpression {
 	public List<ModelObject> generateModelObject(Context context) {
 		Color c = (Color) context.getModel().getVariable(color);
 		List<ModelObject> list = new ArrayList<ModelObject>();
-		list.add(new Pen(name, type, c, stroke));
+		list.add(new Pen(name, type, stroke));
 		return list;
 	}
 
