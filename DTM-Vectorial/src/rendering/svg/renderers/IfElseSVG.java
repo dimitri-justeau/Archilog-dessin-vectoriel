@@ -4,6 +4,7 @@ import model.instruction.operators.Ifelse;
 
 import org.apache.batik.svggen.SVGGraphics2D;
 
+import rendering.java2d.FactoryGraphics2D;
 import rendering.svg.RendererSVG;
 
 
@@ -15,21 +16,21 @@ import rendering.svg.RendererSVG;
  */
 public class IfElseSVG extends RendererSVG {
 
-	public IfElseSVG(Ifelse ie){
-
-	}
-
 	/**
-	 * 
-	 * @param o
+	 * L'objet IfElse du Modele
 	 */
-	public void render(Object o){
-
+	private Ifelse ifElse;
+	
+	public IfElseSVG(Ifelse ie){
+		this.ifElse = ie;
 	}
 
 	@Override
 	public void render(SVGGraphics2D g2d) {
-		// TODO Auto-generated method stub
+		if(ifElse.isTrue())
+			FactoryGraphics2D.makeRendererFrom(ifElse.getIfTrue()).render(g2d);
+		else
+			FactoryGraphics2D.makeRendererFrom(ifElse.getIfFalse()).render(g2d);
 		
 	}
 

@@ -1,9 +1,18 @@
 package interpretation.parsing;
 
-import interpretation.expressions.*;
-import interpretation.expressions.variables.*;
-import interpretation.expressions.functions.*;
-import interpretation.expressions.operators.*;
+import interpretation.expressions.AbstractExpression;
+import interpretation.expressions.EPicture;
+import interpretation.expressions.functions.EDrawPath;
+import interpretation.expressions.operators.EFor;
+import interpretation.expressions.variables.EBezier;
+import interpretation.expressions.variables.ECircle;
+import interpretation.expressions.variables.EColor;
+import interpretation.expressions.variables.EPath;
+import interpretation.expressions.variables.EPen;
+import interpretation.expressions.variables.EPoint;
+import interpretation.expressions.variables.EPolygon;
+import interpretation.expressions.variables.EShape;
+import interpretation.expressions.variables.ESquare;
 
 import java.util.ArrayList;
 import java.util.List;

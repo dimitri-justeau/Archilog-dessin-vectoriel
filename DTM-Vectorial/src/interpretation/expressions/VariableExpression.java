@@ -1,8 +1,8 @@
 package interpretation.expressions;
 
-import model.*;
 import model.variables.Variable;
 import interpretation.Context;
+import model.ModelObject;
 
 /**
 * @author Andres Felipe Gutierrez, Amaury Ollagnier et Dimitri Justeau

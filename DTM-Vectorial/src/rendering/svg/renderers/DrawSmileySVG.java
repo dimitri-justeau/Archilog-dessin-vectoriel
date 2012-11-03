@@ -1,7 +1,11 @@
 package rendering.svg.renderers;
 
+import model.Instruction;
+import model.instruction.functions.DrawSmiley;
+
 import org.apache.batik.svggen.SVGGraphics2D;
 
+import rendering.svg.FactorySVG;
 import rendering.svg.RendererSVG;
 
 
@@ -13,21 +17,17 @@ import rendering.svg.RendererSVG;
  */
 public class DrawSmileySVG extends RendererSVG {
 
-	public DrawSmileySVG(){
+	/** the draw smiley of the modele */
+	private DrawSmiley ds;
 
-	}
-
-	/**
-	 * 
-	 * @param o
-	 */
-	public void render(Object o){
-
+	public DrawSmileySVG(Instruction ins) {
+		this.ds =(DrawSmiley) ins;
 	}
 
 	@Override
 	public void render(SVGGraphics2D g2d) {
-		// TODO Auto-generated method stub
+		for(Instruction ins: this.ds.getInstructions())
+			FactorySVG.makeRendererFrom(ins).render(g2d);
 		
 	}
 

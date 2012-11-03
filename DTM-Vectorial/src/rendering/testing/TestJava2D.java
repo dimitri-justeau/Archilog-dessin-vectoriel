@@ -6,6 +6,7 @@ import java.util.List;
 import model.Model;
 import model.Picture;
 import model.instruction.functions.DrawPath;
+import model.instruction.functions.DrawSmiley;
 import model.variables.Bezier;
 import model.variables.Circle;
 import model.variables.Color;
@@ -80,6 +81,8 @@ public class TestJava2D {
 		DrawPath dpc2 = new DrawPath(p, c2, new Pen ("Pen2", null, 10), g);
 		p.addInstruction(dpc2);
 	
+		DrawSmiley ds = new DrawSmiley(p, g, 100, new Point("p", 100, 100));
+		p.addInstruction(ds);
 		
 		
 		m.putPicture(p);

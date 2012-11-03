@@ -19,6 +19,7 @@ import model.variables.Polygon;
 import rendering.java2d.renderers.DrawBezierGraphics2D;
 import rendering.java2d.renderers.DrawCircleGraphics2D;
 import rendering.java2d.renderers.DrawPolygoneGraphics2D;
+import rendering.java2d.renderers.DrawSmileyGraphics2D;
 import rendering.java2d.renderers.ForGraphics2D;
 import rendering.java2d.renderers.IfElseGraphics2D;
 
@@ -91,9 +92,8 @@ public class FactoryGraphics2D {
 				else if ( path instanceof Bezier )
 					return new DrawBezierGraphics2D((DrawPath) ins);
 			} 
-			
 			else if ( ins instanceof DrawSmiley ){
-				
+				return new DrawSmileyGraphics2D(ins);
 			}
 		}
 		return null;

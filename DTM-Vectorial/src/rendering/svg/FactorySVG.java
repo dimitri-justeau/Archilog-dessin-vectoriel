@@ -16,10 +16,10 @@ import model.variables.Bezier;
 import model.variables.Circle;
 import model.variables.Path;
 import model.variables.Polygon;
-
 import rendering.svg.renderers.DrawBezierSvg;
 import rendering.svg.renderers.DrawCircleSvg;
 import rendering.svg.renderers.DrawPolygoneSvg;
+import rendering.svg.renderers.DrawSmileySVG;
 import rendering.svg.renderers.ForSVG;
 import rendering.svg.renderers.IfElseSVG;
 
@@ -92,7 +92,7 @@ public class FactorySVG {
 			} 
 			
 			else if ( ins instanceof DrawSmiley ){
-				
+				return new DrawSmileySVG(ins);
 			}
 		}
 		return null;

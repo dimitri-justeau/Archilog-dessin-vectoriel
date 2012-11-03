@@ -3,7 +3,6 @@ package rendering.java2d.renderers;
 import java.awt.Graphics2D;
 
 import model.instruction.operators.Ifelse;
-
 import rendering.java2d.FactoryGraphics2D;
 import rendering.java2d.RendererGraphics2D;
 

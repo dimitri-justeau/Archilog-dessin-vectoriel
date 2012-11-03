@@ -2,6 +2,9 @@ package rendering.java2d.renderers;
 
 import java.awt.Graphics2D;
 
+import model.Instruction;
+import model.instruction.functions.DrawSmiley;
+import rendering.java2d.FactoryGraphics2D;
 import rendering.java2d.RendererGraphics2D;
 
 
@@ -13,18 +16,17 @@ import rendering.java2d.RendererGraphics2D;
  */
 public class DrawSmileyGraphics2D extends RendererGraphics2D {
 
-	/**
-	 * Le smiley a tracer sur l'objet Graphics2D
-	 */
+	/** Le smiley a tracer sur l'objet Graphics2D */
+	private DrawSmiley ds;
 	
-	public DrawSmileyGraphics2D(){
-
+	public DrawSmileyGraphics2D(Instruction ins) {
+		ds = (DrawSmiley) ins;
 	}
 
 	@Override
 	public void render(Graphics2D g2d) {
-		// TODO Auto-generated method stub
-		
+		for(Instruction i : this.ds.getInstructions())
+			FactoryGraphics2D.makeRendererFrom(i).render(g2d);
 	}
 
 }

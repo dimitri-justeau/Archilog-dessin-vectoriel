@@ -5,10 +5,9 @@ import java.awt.Graphics2D;
 import java.awt.geom.CubicCurve2D;
 import java.awt.geom.Point2D;
 
-import rendering.java2d.Util;
-
 import model.instruction.functions.DrawPath;
 import model.variables.Bezier;
+import rendering.java2d.Util;
 
 /**
  * Classe permetant le rendering d'une courbe de Bezier sur un Graphics2D
