@@ -3,6 +3,8 @@ package rendering.svg.renderers;
 import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 
+import org.apache.batik.svggen.SVGGraphics2D;
+
 import model.instruction.functions.DrawPath;
 import model.variables.Point;
 import model.variables.Polygon;
@@ -25,7 +27,7 @@ public class DrawPolygoneSvg extends DrawPathSVG{
 	}
 
 	@Override
-	public void render(Graphics2D g2d) {
+	public void render(SVGGraphics2D g2d) {
 		// On sp�cifie la couleur dans un premier temps
 		g2d.setColor( Util.getColorAwt(this.getDrawPath().getColor()) );
 		// On specifie le pinceau avec lequel dessiner

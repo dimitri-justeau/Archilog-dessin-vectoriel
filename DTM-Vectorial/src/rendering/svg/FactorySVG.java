@@ -58,7 +58,7 @@ public class FactorySVG {
 	 */
 	private static void makeRendererGraphicsSVG(Picture pic,
 			Map<Picture, PaneGraphicsSVG> map) {
-		PaneGraphicsSVG panel = new PaneGraphicsSVG();
+		PaneGraphicsSVG panel = new PaneGraphicsSVG(pic.getName());
 		for(Instruction ins : pic.getInstructions())
 			panel.addRenderer(makeRendererFrom(ins));
 		map.put(pic, panel);

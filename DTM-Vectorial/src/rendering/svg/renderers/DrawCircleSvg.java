@@ -4,6 +4,8 @@ import java.awt.BasicStroke;
 import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
 
+import org.apache.batik.svggen.SVGGraphics2D;
+
 import model.instruction.functions.DrawPath;
 import model.variables.Circle;
 import rendering.java2d.Util;
@@ -26,7 +28,7 @@ public class DrawCircleSvg extends DrawPathSVG{
 	}
 
 	@Override
-	public void render(Graphics2D g2d) {
+	public void render(SVGGraphics2D g2d) {
 		// On specifie la couleur dans un premier temps
 		g2d.setColor(Util.getColorAwt(this.getDrawPath().getColor()));
 		// On specifie le pinceau avec lequel dessiner

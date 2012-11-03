@@ -2,6 +2,8 @@ package rendering.svg;
 
 import java.awt.Graphics2D;
 
+import org.apache.batik.svggen.SVGGraphics2D;
+
 import rendering.IInstructionRenderer;
 
 /**
@@ -12,10 +14,12 @@ import rendering.IInstructionRenderer;
 public abstract class RendererSVG implements IInstructionRenderer {
 
 	public void render(Object o){
-		Graphics2D g2D = (Graphics2D) o;
+		SVGGraphics2D g2D = (SVGGraphics2D) o;
 		render(g2D);
 	}
 	
-	public abstract void render(Graphics2D g2D);
+	public abstract void render(SVGGraphics2D g2D);
+	
+	//public abstract void stream(SVGGraphics2D g2D, String file);
 
 }

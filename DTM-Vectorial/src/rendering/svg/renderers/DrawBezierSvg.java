@@ -5,6 +5,9 @@ import java.awt.Graphics2D;
 import java.awt.geom.CubicCurve2D;
 import java.awt.geom.Point2D;
 
+import org.apache.batik.svggen.SVGGraphics2D;
+import org.apache.batik.svggen.SVGGraphics2DIOException;
+
 import model.instruction.functions.DrawPath;
 import model.variables.Bezier;
 import rendering.java2d.Util;
@@ -26,7 +29,7 @@ public class DrawBezierSvg extends DrawPathSVG{
 	}
 
 	@Override
-	public void render(Graphics2D g2d) {
+	public void render(SVGGraphics2D g2d) {
 		// On specifie la couleur dans un premier temps
 		g2d.setColor(Util.getColorAwt(this.getDrawPath().getColor()));
 		// On specifie le pinceau avec lequel dessiner
@@ -58,6 +61,5 @@ public class DrawBezierSvg extends DrawPathSVG{
 	public void setBezier(Bezier bezier) {
 		this.bezier = bezier;
 	}
-
 
 }

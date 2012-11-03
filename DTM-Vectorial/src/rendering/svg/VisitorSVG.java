@@ -37,7 +37,8 @@ public class VisitorSVG extends Visitor {
 		for(Picture p : renderer.keySet()){
 
 			JFrame f = new JFrame(p.getName());
-			f.setContentPane(renderer.get(p));
+			renderer.get(p).paintComponent();
+			f.getContentPane().add(renderer.get(p));
 			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 			f.setLocationRelativeTo(null);
 			f.setSize( (int)p.getWidth(), (int)p.getHeight());
