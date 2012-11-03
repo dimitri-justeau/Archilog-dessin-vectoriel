@@ -16,11 +16,6 @@ public class Pen extends DrawingTools {
 
 
 	/**
-	 * La couleur du tracé
-	 */
-	private Color color;
-
-	/**
 	 * L'épaisseur du tracé
 	 */
 	private int stroke;
@@ -29,14 +24,12 @@ public class Pen extends DrawingTools {
 	 *
 	 * @param name Nom du crayon
 	 * @param type Type de crayon à utiliser
-	 * @param color Couleur du crayon
 	 * @param stroke Épaisseur du crayon 
 	 */
 
-	public Pen(String name, String type, Color color, int stroke){
+	public Pen(String name, String type, int stroke){
 		super(name);
 		this.type = type;
-		this.color = color;
 		this.stroke = stroke;
 	}
 
@@ -46,14 +39,6 @@ public class Pen extends DrawingTools {
 	 */
 	public String getType() {
 		return this.type;
-	}
-
-	/**
-	 * Méthode qui retourne la couleur de stylo à utiliser.
-	 * @return La couleur du tracé
-	 */
-	public Color getColor() {
-		return color;
 	}
 
 	/**
