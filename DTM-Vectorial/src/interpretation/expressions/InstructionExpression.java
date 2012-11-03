@@ -1,8 +1,7 @@
-package interpretation.expressions.terminal;
+package interpretation.expressions;
 
 import model.*;
 import interpretation.Context;
-import interpretation.expressions.AbstractExpression;
 
 public abstract class InstructionExpression extends AbstractExpression{
 

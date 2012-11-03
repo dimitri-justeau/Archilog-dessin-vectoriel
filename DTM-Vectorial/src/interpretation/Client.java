@@ -33,20 +33,21 @@ public class Client {
 	 * @param context
 	 * @param file
 	 */
-	public Client(Context context, Parser parser, String file){
+	public Client(Context context, Parser parser){
 		this.context = context;
 		this.parser = parser;
 		try {
-			this.expressionTree = this.parser.parse(file);
+			this.expressionTree = this.parser.parse();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-	public void reLoad(String file){
+	public void reLoad(Parser p){
+		this.parser = p;
 		this.context.reset();
 		try {
-			this.expressionTree = this.parser.parse(file);
+			this.expressionTree = this.parser.parse();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

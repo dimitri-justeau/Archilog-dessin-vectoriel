@@ -1,4 +1,4 @@
-package interpretation.expressions.terminal;
+package interpretation.expressions;
 
 public abstract class FunctionExpression extends InstructionExpression{
 

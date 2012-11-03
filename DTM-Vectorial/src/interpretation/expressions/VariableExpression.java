@@ -1,8 +1,7 @@
-package interpretation.expressions.terminal;
+package interpretation.expressions;
 
 import model.*;
 import interpretation.Context;
-import interpretation.expressions.*;
 
 /**
 * @author Andres Felipe Gutierrez, Amaury Ollagnier et Dimitri Justeau

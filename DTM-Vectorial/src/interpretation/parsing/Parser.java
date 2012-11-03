@@ -17,7 +17,7 @@ public interface Parser {
 	 * @param file
 	 * @throws Exception 
 	 */
-	public List<AbstractExpression> parse(String file) 
+	public List<AbstractExpression> parse() 
 			throws Exception;
 
 }

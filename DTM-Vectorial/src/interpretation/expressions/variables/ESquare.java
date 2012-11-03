@@ -1,4 +1,4 @@
-package interpretation.expressions.terminal.variables;
+package interpretation.expressions.variables;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,7 +7,7 @@ import model.ModelObject;
 import model.variables.Point;
 import model.variables.Square;
 import interpretation.Context;
-import interpretation.expressions.terminal.VariableExpression;
+import interpretation.expressions.VariableExpression;
 /**
  * Classe abstraite pour desinner un carr�
  * @author Andres Gutierrez

@@ -1,16 +1,16 @@
-package interpretation.expressions.nonTerminal;
+package interpretation.expressions.operators;
 
 import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import model.*;
+import model.variables.*;
+import interpretation.Context;
+import interpretation.expressions.*;
 import model.instruction.operators.*;
 
-import interpretation.Context;
-import interpretation.expressions.AbstractExpression;
-
-public class EFor extends AbstractExpression{
+public class EFor extends InstructionExpression{
 
 	List<AbstractExpression> expressionsBloc;
 	int repeats;
@@ -19,13 +19,7 @@ public class EFor extends AbstractExpression{
 		this.repeats = repeats;
 		this.expressionsBloc = exprs;
 	}
-	
-	@Override
-	public void interpret(Context context) {
-		
-	}
 
-	@Override
 	public List<ModelObject> generateModelObject(Context context) {
 		
 		List<ModelObject> modelObjects = new ArrayList<ModelObject>();
@@ -41,6 +35,7 @@ public class EFor extends AbstractExpression{
 		for(ModelObject o : modelObjects){
 			// On ajoute les variables et pictures au modele
 			if(o instanceof Variable){
+				System.out.println(((Variable) o) instanceof Bezier);
 				context.getModel().putVariable((Variable) o);
 			}
 			else

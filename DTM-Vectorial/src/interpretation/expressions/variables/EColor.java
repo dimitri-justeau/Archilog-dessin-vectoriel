@@ -1,4 +1,4 @@
-package interpretation.expressions.terminal.variables;
+package interpretation.expressions.variables;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,7 +6,7 @@ import java.util.List;
 import model.ModelObject;
 import model.variables.Color;
 import interpretation.Context;
-import interpretation.expressions.terminal.VariableExpression;
+import interpretation.expressions.VariableExpression;
 
 public class EColor extends VariableExpression {
 

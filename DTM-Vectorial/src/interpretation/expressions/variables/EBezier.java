@@ -1,23 +1,26 @@
-package interpretation.expressions.terminal.variables;
+package interpretation.expressions.variables;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import model.ModelObject;
-import model.variables.Path;
+import model.variables.Bezier;
 import model.variables.Point;
 
 import interpretation.Context;
-import interpretation.expressions.terminal.VariableExpression;
-
-public class EPath extends VariableExpression {
+import interpretation.expressions.VariableExpression;
+/**
+ * 
+ * Andres Felipe Gutierrez, Amaury Ollagnier et Dimitri Justeau
+ *
+ */
+public class EBezier extends VariableExpression {
 
 	List<String> points;
 	
-	public EPath(String name, List<String> points) {
+	public EBezier(String name, List<String> points) {
 		super(name);
-		this.points = points;
-	}
+		this.points = points;	}
 
 	public List<ModelObject> generateModelObject(Context context) {
 		List<Point> pts = new ArrayList<Point>();
@@ -26,7 +29,7 @@ public class EPath extends VariableExpression {
 			pts.add(pt);
 		}
 		List<ModelObject> list = new ArrayList<ModelObject>();
-		list.add(new Path(name, pts));
+		list.add(new Bezier(name, pts));
 		return list;
 	}
 

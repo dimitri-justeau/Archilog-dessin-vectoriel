@@ -1,10 +1,9 @@
-package interpretation.expressions.terminal;
+package interpretation.expressions;
 
 import java.util.List;
 import model.ModelObject;
 import model.Picture;
 import interpretation.Context;
-import interpretation.expressions.AbstractExpression;
 
 public class EPicture extends AbstractExpression {
 

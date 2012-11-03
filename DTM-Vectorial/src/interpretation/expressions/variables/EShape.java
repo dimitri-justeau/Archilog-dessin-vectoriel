@@ -1,4 +1,4 @@
-package interpretation.expressions.terminal.variables;
+package interpretation.expressions.variables;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,7 +8,7 @@ import model.variables.Point;
 import model.variables.Shape;
 
 import interpretation.Context;
-import interpretation.expressions.terminal.VariableExpression;
+import interpretation.expressions.VariableExpression;
 
 public class EShape extends VariableExpression {
 
