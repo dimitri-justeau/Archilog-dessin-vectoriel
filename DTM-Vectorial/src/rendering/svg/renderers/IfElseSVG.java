@@ -1,10 +1,8 @@
 package rendering.svg.renderers;
 
-import java.awt.Graphics2D;
+import model.instruction.operators.Ifelse;
 
 import org.apache.batik.svggen.SVGGraphics2D;
-
-import model.instruction.operators.Ifelse;
 
 import rendering.svg.RendererSVG;
 

@@ -6,14 +6,12 @@ import java.util.List;
 import model.Model;
 import model.Picture;
 import model.instruction.functions.DrawPath;
-import model.instruction.operators.For;
 import model.variables.Bezier;
 import model.variables.Circle;
 import model.variables.Color;
 import model.variables.Pen;
 import model.variables.Point;
 import model.variables.Polygon;
-import model.variables.Square;
 import rendering.svg.VisitorSVG;
 
 public class TestSVG {
@@ -85,9 +83,7 @@ public class TestSVG {
 		DrawPath dpc2 = new DrawPath(p, c2, new Pen ("Pen2", null, g, 10), g);
 		p.addInstruction(dpc2);
 		
-		Square s = new Square("square", new Point("p", 200, 50), 20);
-		For f = new For(p, 1, new DrawPath(p, s, new Pen("p", null, r, 2), r));
-		p.addInstruction(f);
+	
 		
 		
 		m.putPicture(p);

@@ -1,12 +1,11 @@
 package rendering.svg.renderers;
 
-import java.awt.Graphics2D;
+import model.Instruction;
+import model.instruction.operators.For;
 
 import org.apache.batik.svggen.SVGGraphics2D;
 
-import model.instruction.operators.For;
-
-import rendering.svg.FactorySVG;
+import rendering.java2d.FactoryGraphics2D;
 import rendering.svg.RendererSVG;
 
 
@@ -30,12 +29,8 @@ public class ForSVG extends RendererSVG {
 
 	@Override
 	public void render(SVGGraphics2D g2d) {
-		// TODO Auto-generated method stub
-		RendererSVG r = FactorySVG.makeRendererFrom(loopFor.getToRepeat());
-		for (int i = 0; i < loopFor.getRepeats(); i++) {
-			r.render(g2d);
-		}
-		
+		for(Instruction inst : loopFor.getInstructionBloc())
+			FactoryGraphics2D.makeRendererFrom(inst).render(g2d);
 	}
 
 

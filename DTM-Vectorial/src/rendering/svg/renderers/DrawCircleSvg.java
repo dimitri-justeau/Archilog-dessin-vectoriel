@@ -1,13 +1,13 @@
 package rendering.svg.renderers;
 
 import java.awt.BasicStroke;
-import java.awt.Graphics2D;
 import java.awt.geom.Ellipse2D;
-
-import org.apache.batik.svggen.SVGGraphics2D;
 
 import model.instruction.functions.DrawPath;
 import model.variables.Circle;
+
+import org.apache.batik.svggen.SVGGraphics2D;
+
 import rendering.java2d.Util;
 
 public class DrawCircleSvg extends DrawPathSVG{

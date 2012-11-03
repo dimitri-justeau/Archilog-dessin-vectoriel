@@ -2,6 +2,7 @@ package rendering.java2d.renderers;
 
 import java.awt.Graphics2D;
 
+import model.Instruction;
 import model.instruction.operators.For;
 import rendering.java2d.FactoryGraphics2D;
 import rendering.java2d.RendererGraphics2D;
@@ -27,10 +28,8 @@ public class ForGraphics2D extends RendererGraphics2D {
 
 	@Override
 	public void render(Graphics2D g2d) {
-		RendererGraphics2D r = FactoryGraphics2D.makeRendererFrom(loopFor.getToRepeat());
-		for (int i = 0; i < loopFor.getRepeats(); i++) {
-			r.render(g2d);
-		}
+		for(Instruction inst : loopFor.getInstructionBloc())
+			FactoryGraphics2D.makeRendererFrom(inst).render(g2d);
 	}
 	
 	

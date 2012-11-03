@@ -1,12 +1,8 @@
 package rendering.svg;
 
-import java.awt.Graphics;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 import org.apache.batik.dom.svg.SVGDOMImplementation;
 import org.apache.batik.svggen.SVGGraphics2D;

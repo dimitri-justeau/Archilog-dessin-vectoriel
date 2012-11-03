@@ -1,15 +1,14 @@
 package rendering.svg.renderers;
 
 import java.awt.BasicStroke;
-import java.awt.Graphics2D;
 import java.awt.geom.CubicCurve2D;
 import java.awt.geom.Point2D;
 
-import org.apache.batik.svggen.SVGGraphics2D;
-import org.apache.batik.svggen.SVGGraphics2DIOException;
-
 import model.instruction.functions.DrawPath;
 import model.variables.Bezier;
+
+import org.apache.batik.svggen.SVGGraphics2D;
+
 import rendering.java2d.Util;
 
 public class DrawBezierSvg extends DrawPathSVG{

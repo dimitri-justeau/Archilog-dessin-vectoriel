@@ -1,13 +1,13 @@
 package rendering.svg.renderers;
 
 import java.awt.BasicStroke;
-import java.awt.Graphics2D;
-
-import org.apache.batik.svggen.SVGGraphics2D;
 
 import model.instruction.functions.DrawPath;
 import model.variables.Point;
 import model.variables.Polygon;
+
+import org.apache.batik.svggen.SVGGraphics2D;
+
 import rendering.java2d.Util;
 
 public class DrawPolygoneSvg extends DrawPathSVG{
