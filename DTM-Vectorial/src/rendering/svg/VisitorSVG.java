@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 
 import java.util.Map;
 
-import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 
@@ -36,13 +36,24 @@ public class VisitorSVG extends Visitor {
 	public void render(){
 		for(Picture p : renderer.keySet()){
 
-			JFrame f = new JFrame(p.getName());
 			renderer.get(p).paintComponent();
-			f.getContentPane().add(renderer.get(p));
-			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			f.setLocationRelativeTo(null);
-			f.setSize( (int)p.getWidth(), (int)p.getHeight());
-			f.setVisible(true);
+			String url = p.getName()+".svg";
+			String osName = System.getProperty("os.name");
+			try {
+			if (osName.startsWith("Windows"))
+			Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
+			else { 
+			String[] browsers = {"firefox", "opera", "konqueror", "epiphany", "mozilla", "netscape" };
+			String browser = null;
+			for (int count = 0; count < browsers.length && browser == null; count++)
+			if (Runtime.getRuntime().exec(new String[] {"which", browsers[count]}).waitFor() == 0)
+			browser = browsers[count];
+			Runtime.getRuntime().exec(new String[] {browser, url});
+			}
+			}
+			catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Error in opening browser" + ":\n" + e.getLocalizedMessage());
+			}
 		}
 
 	}

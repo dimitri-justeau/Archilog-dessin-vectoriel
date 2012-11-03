@@ -56,8 +56,7 @@ public class PaneGraphicsSVG extends JSVGCanvas{
 				r.render(graphics);
 			}
 			graphics.stream(this.nom);
-			System.out.println(graphics.getDOMFactory());
-			this.setSVGDocument((SVGDocument) graphics.getDOMFactory());
+
 		
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
