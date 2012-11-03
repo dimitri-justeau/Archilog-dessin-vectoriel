@@ -1,7 +1,7 @@
 package rendering.svg.renderers;
 
 import model.Instruction;
-import model.instruction.operators.For;
+import model.instruction.operators.InstructionBloc;
 
 import org.apache.batik.svggen.SVGGraphics2D;
 
@@ -21,13 +21,13 @@ public class ForSVG extends RendererSVG {
 	 * L'objet du modele que nous allons 
 	 * parcourir
 	 */
-	private For loopFor;
+	private InstructionBloc loopFor;
 	
 	/**
 	 * 
 	 * @param f
 	 */
-	public ForSVG(For f){
+	public ForSVG(InstructionBloc f){
 		loopFor = f;
 	}
 

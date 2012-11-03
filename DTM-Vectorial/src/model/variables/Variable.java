@@ -1,4 +1,6 @@
-package model;
+package model.variables;
+
+import model.ModelObject;
 
 
 
@@ -12,7 +14,7 @@ public abstract class Variable extends ModelObject{
 	/**
 	 * Le nom de la variable
 	 */
-	private String name;
+	protected String name;
 	
 	/**
 	 * 

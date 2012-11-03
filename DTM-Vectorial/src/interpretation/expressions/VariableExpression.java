@@ -1,6 +1,7 @@
 package interpretation.expressions;
 
 import model.*;
+import model.variables.Variable;
 import interpretation.Context;
 
 /**

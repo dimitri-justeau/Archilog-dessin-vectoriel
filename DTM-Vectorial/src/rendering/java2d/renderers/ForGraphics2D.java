@@ -3,7 +3,7 @@ package rendering.java2d.renderers;
 import java.awt.Graphics2D;
 
 import model.Instruction;
-import model.instruction.operators.For;
+import model.instruction.operators.InstructionBloc;
 import rendering.java2d.FactoryGraphics2D;
 import rendering.java2d.RendererGraphics2D;
 
@@ -20,9 +20,9 @@ public class ForGraphics2D extends RendererGraphics2D {
 	 * L'objet du modele que nous allons 
 	 * parcourir
 	 */
-	private For loopFor;
+	private InstructionBloc loopFor;
 	
-	public ForGraphics2D(For f){
+	public ForGraphics2D(InstructionBloc f){
 		loopFor = f;
 	}
 

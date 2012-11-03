@@ -10,7 +10,7 @@ import model.instruction.Function;
 import model.instruction.Operator;
 import model.instruction.functions.DrawPath;
 import model.instruction.functions.DrawSmiley;
-import model.instruction.operators.For;
+import model.instruction.operators.InstructionBloc;
 import model.instruction.operators.Ifelse;
 import model.variables.Bezier;
 import model.variables.Circle;
@@ -77,8 +77,8 @@ public class FactoryGraphics2D {
 			Operator op = (Operator) ins;
 			if (op instanceof Ifelse)
 				return new IfElseGraphics2D((Ifelse) op);
-			else if (op instanceof For)
-				return new ForGraphics2D((For) op);
+			else if (op instanceof InstructionBloc)
+				return new ForGraphics2D((InstructionBloc) op);
 		} 
 		
 		else if (ins instanceof Function){

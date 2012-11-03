@@ -21,6 +21,7 @@ public class EPoint extends VariableExpression {
 	public List<ModelObject> generateModelObject(Context context) {
 		List<ModelObject> list = new ArrayList<ModelObject>();
 		list.add(new Point(name, x, y));
+		System.out.println(name + " " + x + " " + y);
 		return list;
 	}
 

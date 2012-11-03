@@ -10,7 +10,7 @@ import model.instruction.Function;
 import model.instruction.Operator;
 import model.instruction.functions.DrawPath;
 import model.instruction.functions.DrawSmiley;
-import model.instruction.operators.For;
+import model.instruction.operators.InstructionBloc;
 import model.instruction.operators.Ifelse;
 import model.variables.Bezier;
 import model.variables.Circle;
@@ -75,8 +75,8 @@ public class FactorySVG {
 			Operator op = (Operator) ins;
 			if (op instanceof Ifelse)
 				return new IfElseSVG((Ifelse) op);
-			else if (op instanceof For)
-				return new ForSVG((For) op);
+			else if (op instanceof InstructionBloc)
+				return new ForSVG((InstructionBloc) op);
 		} 
 		
 		else if (ins instanceof Function){

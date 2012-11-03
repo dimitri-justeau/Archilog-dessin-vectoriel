@@ -31,5 +31,7 @@
 	<classpathentry kind="lib" path="LIB/batik-1.7/lib/xerces_2_5_0.jar"/>
 	<classpathentry kind="lib" path="LIB/batik-1.7/lib/xml-apis-ext.jar"/>
 	<classpathentry kind="lib" path="LIB/batik-1.7/lib/xml-apis.jar"/>
+	<classpathentry kind="lib" path="LIB/ext-1.1.1.jar"/>
+	<classpathentry kind="lib" path="LIB/jep-2.4.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

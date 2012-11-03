@@ -10,7 +10,7 @@ import interpretation.expressions.VariableExpression;
 
 public class EColor extends VariableExpression {
 
-	int R,G,B;
+	private int R,G,B;
 	
 	public EColor(String name, int R, int G, int B) {
 		super(name);

@@ -8,6 +8,8 @@ import interpretation.expressions.operators.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.nfunk.jep.ParseException;
+
 /**
  * @author Andres Felipe Gutierrez, Amaury Ollagnier et Dimitri Justeau
  * @version 1.0
@@ -42,8 +44,11 @@ public enum Sentence {
 	 * Renvoie l'AbstractExpression correspondant à la syntaxe et au paramètres donnés
 	 * @param syntax
 	 * @param parameters
+	 * @param 
+	 * @throws ParseException 
 	 */
-	public static AbstractExpression getExpression(String syntax, List<Object> parameters){
+	public static AbstractExpression getExpression(String syntax,
+			List<Object> parameters, MathParser mathParseur) throws ParseException {
 		
 		Sentence s = getSentence(syntax);
 		
@@ -54,23 +59,23 @@ public enum Sentence {
 			// VARIABLES
 			case Picture:
 				String name = (String) parameters.get(0);
-				double width = Double.parseDouble((String) parameters.get(1));
-				double height = Double.parseDouble((String) parameters.get(2));
+				double width = mathParseur.parseExpression((String) parameters.get(1));
+				double height = mathParseur.parseExpression((String) parameters.get(2));
 				retour = new EPicture(name, width, height);
 				break;
 				
 			case Circle:
 				name = (String) parameters.get(0);
 				String position = (String) parameters.get(1);
-				double rayon = Double.parseDouble((String) parameters.get(2));
+				double rayon = mathParseur.parseExpression((String) parameters.get(2));
 				retour = new ECircle(name, position, rayon);
 				break;
 				
 			case Color:
 				name = (String) parameters.get(0);
-				int R = Integer.parseInt((String) parameters.get(1));
-				int G = Integer.parseInt((String) parameters.get(2));
-				int B = Integer.parseInt((String) parameters.get(3));
+				int R = mathParseur.parseExpression((String) parameters.get(1));
+				int G = mathParseur.parseExpression((String) parameters.get(2));
+				int B = mathParseur.parseExpression((String) parameters.get(3));
 				retour = new EColor(name, R, G, B);
 				break;
 
@@ -86,15 +91,14 @@ public enum Sentence {
 			case Pen:
 				name = (String) parameters.get(0);
 				String type = (String) parameters.get(1);
-				String color = (String) parameters.get(2);
-				int stroke = Integer.parseInt((String) parameters.get(3));
-				retour = new EPen(name, type, color, stroke);
+				int stroke = mathParseur.parseExpression((String) parameters.get(2));
+				retour = new EPen(name, type, stroke);
 				break;
 				
 			case Point:
 				name = (String) parameters.get(0);
-				int x = Integer.parseInt((String) parameters.get(1));
-				int y = Integer.parseInt((String) parameters.get(2));
+				int x = mathParseur.parseExpression((String) parameters.get(1));
+				int y = mathParseur.parseExpression((String) parameters.get(2));
 				retour = new EPoint(name, x, y);
 				break;
 				
@@ -110,7 +114,7 @@ public enum Sentence {
 			case Square:
 				name = (String) parameters.get(0);
 				position = (String) parameters.get(1);
-				width = Double.parseDouble((String) parameters.get(2));
+				width = mathParseur.parseExpression((String) parameters.get(2));
 				retour = new ESquare(name, position, width);
 				break;
 			
@@ -137,7 +141,7 @@ public enum Sentence {
 				String picture = (String) parameters.get(0);
 				String path = (String) parameters.get(1);
 				String pen = (String) parameters.get(2);
-				color = (String) parameters.get(3);
+				String color = (String) parameters.get(3);
 				retour = new EDrawPath(picture, path, pen, color);
 				break;
 				
@@ -146,9 +150,9 @@ public enum Sentence {
 				
 			// OPERATORS
 			case For:
-				int start = Integer.parseInt((String) parameters.get(0));
-				int end = Integer.parseInt((String) parameters.get(1));
-				int step = Integer.parseInt((String) parameters.get(2));
+				int start = mathParseur.parseExpression((String) parameters.get(0));
+				int end = mathParseur.parseExpression((String) parameters.get(1));
+				int step = mathParseur.parseExpression((String) parameters.get(2));
 				int repeats = (int)((end-start+1)/step);
 				List<AbstractExpression> expressions = new ArrayList<AbstractExpression>();
 				for(int i=3; i<parameters.size(); i++){
