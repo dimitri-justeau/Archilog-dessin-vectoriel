@@ -1,6 +1,6 @@
 package rendering.svg.renderers;
 
-import java.awt.Graphics2D;
+import org.apache.batik.svggen.SVGGraphics2D;
 
 import rendering.svg.RendererSVG;
 
@@ -26,7 +26,7 @@ public class DrawSmileySVG extends RendererSVG {
 	}
 
 	@Override
-	public void render(Graphics2D g2d) {
+	public void render(SVGGraphics2D g2d) {
 		// TODO Auto-generated method stub
 		
 	}

@@ -34,7 +34,7 @@ public enum Sentence {
 	
 	// OPERATORS
 	If, /*done*/
-	For, 
+	For, /*done*/
 	
 	;
 
@@ -155,7 +155,6 @@ public enum Sentence {
 					expressions.add((AbstractExpression) parameters.get(i));
 				}
 				retour = new EFor(repeats, expressions);
-				System.out.println("dd : " + repeats + " - " + expressions.size());
 				break;
 				
 			case If:

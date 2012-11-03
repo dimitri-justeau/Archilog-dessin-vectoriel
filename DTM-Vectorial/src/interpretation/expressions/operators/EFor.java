@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+
 import model.*;
-import model.variables.*;
 import interpretation.Context;
 import interpretation.expressions.*;
 import model.instruction.operators.*;
@@ -25,7 +25,29 @@ public class EFor extends InstructionExpression{
 		List<ModelObject> modelObjects = new ArrayList<ModelObject>();
 		
 		for(AbstractExpression e : this.expressionsBloc){
-			modelObjects.addAll(e.generateModelObject(context));
+			// On ajoute les variables et pictures au modele
+			if(e instanceof VariableExpression){
+				List<ModelObject> vars = e.generateModelObject(context);
+				for(ModelObject v : vars){
+					if(v instanceof Variable){
+						context.getModel().putVariable((Variable) v);
+					}
+				}
+			}
+			else
+			if(e instanceof EPicture){
+				List<ModelObject> pics = e.generateModelObject(context);
+				for(ModelObject p : pics){
+					if(p instanceof Picture){
+						context.getModel().putPicture((Picture) p);
+					}
+				}
+			}
+			// On ajoute l'instruction à ajouter au For
+			else
+			if(e instanceof InstructionExpression){
+				modelObjects.addAll(e.generateModelObject(context));
+			}
 		}
 		
 		// Les pictures pour lesquelles il faudra créer un For et les
@@ -33,16 +55,7 @@ public class EFor extends InstructionExpression{
 		Map<Picture, For> pics = new HashMap<Picture, For>();
 		
 		for(ModelObject o : modelObjects){
-			// On ajoute les variables et pictures au modele
-			if(o instanceof Variable){
-				System.out.println(((Variable) o) instanceof Bezier);
-				context.getModel().putVariable((Variable) o);
-			}
-			else
-			if(o instanceof Picture){
-				context.getModel().putPicture((Picture) o);
-			}
-				
+
 			if(o instanceof Instruction){
 				Picture p = ((Instruction)o).getPicture();
 				if(!pics.containsKey(p)){

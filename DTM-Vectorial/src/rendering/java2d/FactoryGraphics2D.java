@@ -82,7 +82,6 @@ public class FactoryGraphics2D {
 		} 
 		
 		else if (ins instanceof Function){
-			
 			if (ins instanceof DrawPath){
 				Path path = ((DrawPath)ins).getPath();
 				if( path instanceof Circle )

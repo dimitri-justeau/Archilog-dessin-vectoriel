@@ -89,7 +89,8 @@ public class Model {
 	}
 	
 	/**
-	 * Ajoute une variable au modele
+	 * Ajoute une variable au modele si elle n'y est pas présente,
+	 * la met à jour sinon
 	 * @param var
 	 */
 	public void putVariable(Variable var){
@@ -97,11 +98,32 @@ public class Model {
 	}
 	
 	/**
-	 * Ajoute une picture au modele
+	 * Ajoute une liste de variables au modele
+	 * @param var
+	 */
+	public void putAllVariables(List<Variable> vars){
+		for(Variable var : vars){
+			this.variables.put(var.getName(), var);
+		}	
+	}
+	
+	/**
+	 * Ajoute une picture au modele si elle n'y est pas présente,
+	 * la met à jour sinon
 	 * @param var
 	 */
 	public void putPicture(Picture pic){
 		this.pictures.put(pic.getName(), pic);
+	}
+	
+	/**
+	 * Ajoute une liste de pictures au modele
+	 * @param var
+	 */
+	public void putPictures(List<Picture> pics){
+		for(Picture pic : pics){
+			this.pictures.put(pic.getName(), pic);
+		}	
 	}
 	
 	public void reset(){

@@ -1,24 +1,25 @@
 package rendering.svg.renderers;
 
 import java.awt.BasicStroke;
-import java.awt.Graphics2D;
 import java.awt.geom.CubicCurve2D;
 import java.awt.geom.Point2D;
 
 import model.instruction.functions.DrawPath;
 import model.variables.Bezier;
+
+import org.apache.batik.svggen.SVGGraphics2D;
+
 import rendering.java2d.Util;
 
 public class DrawBezierSvg extends DrawPathSVG{
 	/**
-	 * La courbe de Bezier a tracer sur le modele
+	 * La courbe de Bezier à tracer sur le modele
 	 */
 	private Bezier bezier;
 
 	/**
 	 * Constructeur classique prenant en parametre le drawing path du modele
-	 * 
-	 * @param dp
+	 * @param dp drawing path du modele
 	 */
 	public DrawBezierSvg(DrawPath dp) {
 		super(dp);
@@ -26,7 +27,7 @@ public class DrawBezierSvg extends DrawPathSVG{
 	}
 
 	@Override
-	public void render(Graphics2D g2d) {
+	public void render(SVGGraphics2D g2d) {
 		// On specifie la couleur dans un premier temps
 		g2d.setColor(Util.getColorAwt(this.getDrawPath().getColor()));
 		// On specifie le pinceau avec lequel dessiner
@@ -45,19 +46,19 @@ public class DrawBezierSvg extends DrawPathSVG{
 	}
 
 	/**
-	 * @return the bezier
+	 * Méthode qui retourne la courbe de Bezier.
+	 * @return La courbe de Bezier.
 	 */
 	public Bezier getBezier() {
 		return bezier;
 	}
 
 	/**
-	 * @param bezier
-	 *            the bezier to set
+	 * Méthode qui permet de changer la courbe de Bezier associé.
+	 * @param bezier La nouvelle courbe à associer.
 	 */
 	public void setBezier(Bezier bezier) {
 		this.bezier = bezier;
 	}
-
 
 }

@@ -28,12 +28,8 @@ public class ForGraphics2D extends RendererGraphics2D {
 
 	@Override
 	public void render(Graphics2D g2d) {
-		for (int i = 0; i < loopFor.getRepeats(); i++) {
-			for(Instruction instruction : loopFor.getInstructionBloc()){
-				RendererGraphics2D r = FactoryGraphics2D.makeRendererFrom(instruction);
-				r.render(g2d);
-			}
-		}
+		for(Instruction inst : loopFor.getInstructionBloc())
+			FactoryGraphics2D.makeRendererFrom(inst).render(g2d);
 	}
 	
 	

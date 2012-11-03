@@ -4,7 +4,7 @@ import java.util.LinkedHashMap;
 
 import java.util.Map;
 
-import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 
 
 
@@ -21,6 +21,9 @@ import rendering.Visitor;
  */
 public class VisitorSVG extends Visitor {
 
+	/**
+	 * Le Map de tous les dessins chacun ayant un PaneGraphicsSVG associé.
+	 */
 	private Map<Picture, PaneGraphicsSVG> renderer;
 
 	public VisitorSVG(Model model) {
@@ -36,12 +39,24 @@ public class VisitorSVG extends Visitor {
 	public void render(){
 		for(Picture p : renderer.keySet()){
 
-			JFrame f = new JFrame(p.getName());
-			f.setContentPane(renderer.get(p));
-			f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-			f.setLocationRelativeTo(null);
-			f.setSize( (int)p.getWidth(), (int)p.getHeight());
-			f.setVisible(true);
+			renderer.get(p).paintComponent();
+			String url = p.getName()+".svg";
+			String osName = System.getProperty("os.name");
+			try {
+			if (osName.startsWith("Windows"))
+			Runtime.getRuntime().exec("rundll32 url.dll,FileProtocolHandler " + url);
+			else { 
+			String[] browsers = {"firefox", "opera", "konqueror", "epiphany", "mozilla", "netscape" };
+			String browser = null;
+			for (int count = 0; count < browsers.length && browser == null; count++)
+			if (Runtime.getRuntime().exec(new String[] {"which", browsers[count]}).waitFor() == 0)
+			browser = browsers[count];
+			Runtime.getRuntime().exec(new String[] {browser, url});
+			}
+			}
+			catch (Exception e) {
+			JOptionPane.showMessageDialog(null, "Error in opening browser" + ":\n" + e.getLocalizedMessage());
+			}
 		}
 
 	}
