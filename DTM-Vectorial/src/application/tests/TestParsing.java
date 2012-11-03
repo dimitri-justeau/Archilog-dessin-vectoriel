@@ -1,11 +1,14 @@
 package application.tests;
 
+import interpretation.Client;
+import interpretation.Context;
+import interpretation.parsing.Parser;
+import interpretation.parsing.SimpleParser;
+
 import java.io.File;
 
 import model.Model;
 import rendering.java2d.VisitorGraphics2D;
-import interpretation.parsing.*;
-import interpretation.*;
 
 public class TestParsing {
 

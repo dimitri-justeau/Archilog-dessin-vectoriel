@@ -1,14 +1,21 @@
 package interpretation.expressions.operators;
 
-import java.util.List;
+import interpretation.Context;
+import interpretation.expressions.AbstractExpression;
+import interpretation.expressions.EPicture;
+import interpretation.expressions.InstructionExpression;
+import interpretation.expressions.VariableExpression;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
-import model.*;
-import interpretation.Context;
-import interpretation.expressions.*;
-import model.instruction.operators.*;
+import model.Instruction;
+import model.ModelObject;
+import model.Picture;
+import model.Variable;
+import model.instruction.operators.For;
 
 public class EFor extends InstructionExpression{
 

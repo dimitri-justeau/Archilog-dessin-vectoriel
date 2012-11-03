@@ -1,13 +1,13 @@
 package interpretation.expressions.variables;
 
+import interpretation.Context;
+import interpretation.expressions.VariableExpression;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import model.ModelObject;
-import model.variables.Color;
 import model.variables.Pen;
-import interpretation.Context;
-import interpretation.expressions.VariableExpression;
 
 public class EPen extends VariableExpression {
 
@@ -22,7 +22,6 @@ public class EPen extends VariableExpression {
 	}
 
 	public List<ModelObject> generateModelObject(Context context) {
-		Color c = (Color) context.getModel().getVariable(color);
 		List<ModelObject> list = new ArrayList<ModelObject>();
 		list.add(new Pen(name, type, stroke));
 		return list;

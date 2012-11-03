@@ -1,14 +1,14 @@
 package interpretation.expressions.variables;
 
+import interpretation.Context;
+import interpretation.expressions.VariableExpression;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import model.ModelObject;
 import model.variables.Bezier;
 import model.variables.Point;
-
-import interpretation.Context;
-import interpretation.expressions.VariableExpression;
 /**
  * 
  * Andres Felipe Gutierrez, Amaury Ollagnier et Dimitri Justeau

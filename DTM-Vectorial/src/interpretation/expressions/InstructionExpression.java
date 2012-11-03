@@ -1,7 +1,9 @@
 package interpretation.expressions;
 
-import model.*;
 import interpretation.Context;
+import model.Instruction;
+import model.ModelObject;
+import model.Picture;
 
 public abstract class InstructionExpression extends AbstractExpression{
 

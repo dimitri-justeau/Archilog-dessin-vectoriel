@@ -1,8 +1,10 @@
 package interpretation.expressions;
 
-import model.ModelObject;
 import interpretation.Context;
+
 import java.util.List;
+
+import model.ModelObject;
 
 
 /**

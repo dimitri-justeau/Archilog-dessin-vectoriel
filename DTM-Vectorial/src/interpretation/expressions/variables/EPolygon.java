@@ -1,13 +1,14 @@
 package interpretation.expressions.variables;
 
+import interpretation.Context;
+import interpretation.expressions.VariableExpression;
+
 import java.util.ArrayList;
 import java.util.List;
 
 import model.ModelObject;
 import model.variables.Point;
 import model.variables.Polygon;
-import interpretation.Context;
-import interpretation.expressions.VariableExpression;
 
 public class EPolygon extends VariableExpression {
 

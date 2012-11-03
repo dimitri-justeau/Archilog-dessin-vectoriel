@@ -1,12 +1,9 @@
 package rendering.svg;
 
 import java.util.LinkedHashMap;
-
 import java.util.Map;
 
 import javax.swing.JOptionPane;
-
-
 
 import model.Model;
 import model.Picture;

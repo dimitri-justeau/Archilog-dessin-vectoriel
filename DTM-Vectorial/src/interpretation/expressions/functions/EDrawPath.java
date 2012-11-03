@@ -1,5 +1,8 @@
 package interpretation.expressions.functions;
 
+import interpretation.Context;
+import interpretation.expressions.FunctionExpression;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +12,6 @@ import model.instruction.functions.DrawPath;
 import model.variables.Color;
 import model.variables.Path;
 import model.variables.Pen;
-import interpretation.Context;
-import interpretation.expressions.FunctionExpression;
 
 public class EDrawPath extends FunctionExpression {
 

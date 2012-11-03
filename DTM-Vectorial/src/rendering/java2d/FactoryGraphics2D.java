@@ -92,9 +92,8 @@ public class FactoryGraphics2D {
 				else if ( path instanceof Bezier )
 					return new DrawBezierGraphics2D((DrawPath) ins);
 			} 
-			
 			else if ( ins instanceof DrawSmiley ){
-				new DrawSmileyGraphics2D(ins);
+				return new DrawSmileyGraphics2D(ins);
 			}
 		}
 		return null;
