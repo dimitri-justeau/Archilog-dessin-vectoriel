@@ -33,7 +33,7 @@ public enum Sentence {
 	
 	// FUNCTIONS
 	drawPath, /*done*/
-	drawSmiley, 
+	drawSmiley, /*done*/
 	
 	// OPERATORS
 	If, 
@@ -146,6 +146,11 @@ public enum Sentence {
 				break;
 				
 			case drawSmiley:
+				picture = (String) parameters.get(0);
+				color = (String) parameters.get(1);
+				String size = (String) parameters.get(2);
+				position = (String) parameters.get(3);
+				retour = new EDrawSmiley(picture, color, size, position);
 				break;
 				
 			// OPERATORS

@@ -1,21 +1,37 @@
-Picture check(450,200)
+Picture dessin(600,300)
 
 i=0
 j=0
 
 for(0,10,1){
 		
-	Color Rouge(200-j,0+i,0)
-	Color Bleu(0,0,200)
-	Color Green(0,250,0)
-	Point p1(i+30,50+j)
-	Point p2(i+90,150+j)
-	Point p3(i+30,90+j)
-	Point p4(i+150,10+j)
-	Bezier bezier(p1,p2,p3,p4)
+	Color c1(200-j,0+i,0)
+	Point p1(i+15,25+j)
+	Point p2(i+45,75+j)
+	Point p3(i+15,45+j)
+	Point p4(i+75,5+j)
+	Bezier bezier(p1,p2,p3,p4,)
 	Pen pen(null,5)
-	drawPath(check,bezier,pen,Rouge)
+	drawPath(dessin,bezier,pen,c1)
 	
-	i=i+30
+	i=i+38
 	j=j+5
+}
+
+Color c2(100,0,230)
+
+Point p4(i+55,5+j+80)
+drawSmiley(dessin,c2,120,p4)
+
+k = 0
+
+for(0,15,2){
+
+	Color c3(0+k/3,0+k,255-k/3)
+	Point p(k+15,150)
+	Square carre(p,60)
+	drawPath(dessin,carre,pen,c3)
+	
+	k=k+70
+	
 }
