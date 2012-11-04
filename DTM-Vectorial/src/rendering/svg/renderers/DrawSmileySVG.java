@@ -1,6 +1,6 @@
 package rendering.svg.renderers;
 
-import model.Instruction;
+import model.instruction.Instruction;
 import model.instruction.functions.DrawSmiley;
 
 import org.apache.batik.svggen.SVGGraphics2D;

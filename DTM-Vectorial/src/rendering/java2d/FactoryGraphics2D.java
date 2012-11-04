@@ -3,15 +3,14 @@ package rendering.java2d;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
-import model.Instruction;
 import model.Model;
 import model.Picture;
 import model.instruction.Function;
+import model.instruction.Instruction;
 import model.instruction.Operator;
 import model.instruction.functions.DrawPath;
 import model.instruction.functions.DrawSmiley;
 import model.instruction.operators.InstructionBloc;
-import model.instruction.operators.Ifelse;
 import model.variables.Bezier;
 import model.variables.Circle;
 import model.variables.Path;
@@ -20,8 +19,7 @@ import rendering.java2d.renderers.DrawBezierGraphics2D;
 import rendering.java2d.renderers.DrawCircleGraphics2D;
 import rendering.java2d.renderers.DrawPolygoneGraphics2D;
 import rendering.java2d.renderers.DrawSmileyGraphics2D;
-import rendering.java2d.renderers.ForGraphics2D;
-import rendering.java2d.renderers.IfElseGraphics2D;
+import rendering.java2d.renderers.InstructionBlocGraphics2D;
 
 
 
@@ -76,10 +74,8 @@ public class FactoryGraphics2D {
 	public static RendererGraphics2D makeRendererFrom(Instruction ins) {
 		if ( ins instanceof Operator){
 			Operator op = (Operator) ins;
-			if (op instanceof Ifelse)
-				return new IfElseGraphics2D((Ifelse) op);
-			else if (op instanceof InstructionBloc)
-				return new ForGraphics2D((InstructionBloc) op);
+			if (op instanceof InstructionBloc)
+				return new InstructionBlocGraphics2D((InstructionBloc) op);
 		} 
 		
 		else if (ins instanceof Function){

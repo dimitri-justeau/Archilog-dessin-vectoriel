@@ -35,9 +35,9 @@ public class Color extends DrawingTools {
 	 */
 	public Color(String name, int R, int G, int B){
 		super(name);
-		this.R = R;
-		this.G = G;
-		this.B = B;
+		this.R = R<= 255 ? (R>=0? R : 0) : 255;
+		this.G = G<= 255 ? (G>=0? G : 0) : 255;;
+		this.B = B<= 255 ? (B>=0? B : 0) : 255;;
 	}
 
 	/**

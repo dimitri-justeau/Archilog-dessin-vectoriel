@@ -1,18 +1,10 @@
 package interpretation.parsing;
 
 import interpretation.expressions.AbstractExpression;
-import interpretation.expressions.EPicture;
-import interpretation.expressions.functions.EDrawPath;
-import interpretation.expressions.operators.EFor;
-import interpretation.expressions.variables.EBezier;
-import interpretation.expressions.variables.ECircle;
-import interpretation.expressions.variables.EColor;
-import interpretation.expressions.variables.EPath;
-import interpretation.expressions.variables.EPen;
-import interpretation.expressions.variables.EPoint;
-import interpretation.expressions.variables.EPolygon;
-import interpretation.expressions.variables.EShape;
-import interpretation.expressions.variables.ESquare;
+import interpretation.expressions.model.*;
+import interpretation.expressions.model.functions.*;
+import interpretation.expressions.model.operators.*;
+import interpretation.expressions.model.variables.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -44,7 +36,7 @@ public enum Sentence {
 	drawSmiley, 
 	
 	// OPERATORS
-	If, /*done*/
+	If, 
 	For, /*done*/
 	
 	;
@@ -56,35 +48,34 @@ public enum Sentence {
 	 * @param 
 	 * @throws ParseException 
 	 */
-	public static AbstractExpression getExpression(String syntax,
-			List<Object> parameters, MathParser mathParseur) throws ParseException {
+	public static ModelExpression getExpression(String syntax, List<Object> parameters){
 		
 		Sentence s = getSentence(syntax);
 		
-		AbstractExpression retour = null;
+		ModelExpression retour = null;
 		if(s != null){
 			switch(s){
 			
 			// VARIABLES
 			case Picture:
 				String name = (String) parameters.get(0);
-				double width = mathParseur.parseExpression((String) parameters.get(1));
-				double height = mathParseur.parseExpression((String) parameters.get(2));
+				String width = (String) parameters.get(1);
+				String height = (String) parameters.get(2);
 				retour = new EPicture(name, width, height);
 				break;
 				
 			case Circle:
 				name = (String) parameters.get(0);
 				String position = (String) parameters.get(1);
-				double rayon = mathParseur.parseExpression((String) parameters.get(2));
+				String rayon = (String) parameters.get(2);
 				retour = new ECircle(name, position, rayon);
 				break;
 				
 			case Color:
 				name = (String) parameters.get(0);
-				int R = mathParseur.parseExpression((String) parameters.get(1));
-				int G = mathParseur.parseExpression((String) parameters.get(2));
-				int B = mathParseur.parseExpression((String) parameters.get(3));
+				String R = (String) parameters.get(1);
+				String G = (String) parameters.get(2);
+				String B = (String) parameters.get(3);
 				retour = new EColor(name, R, G, B);
 				break;
 
@@ -100,14 +91,14 @@ public enum Sentence {
 			case Pen:
 				name = (String) parameters.get(0);
 				String type = (String) parameters.get(1);
-				int stroke = mathParseur.parseExpression((String) parameters.get(2));
+				String stroke = (String) parameters.get(2);
 				retour = new EPen(name, type, stroke);
 				break;
 				
 			case Point:
 				name = (String) parameters.get(0);
-				int x = mathParseur.parseExpression((String) parameters.get(1));
-				int y = mathParseur.parseExpression((String) parameters.get(2));
+				String x = (String) parameters.get(1);
+				String y = (String) parameters.get(2);
 				retour = new EPoint(name, x, y);
 				break;
 				
@@ -123,7 +114,7 @@ public enum Sentence {
 			case Square:
 				name = (String) parameters.get(0);
 				position = (String) parameters.get(1);
-				width = mathParseur.parseExpression((String) parameters.get(2));
+				width = (String) parameters.get(2);
 				retour = new ESquare(name, position, width);
 				break;
 			
@@ -159,15 +150,14 @@ public enum Sentence {
 				
 			// OPERATORS
 			case For:
-				int start = mathParseur.parseExpression((String) parameters.get(0));
-				int end = mathParseur.parseExpression((String) parameters.get(1));
-				int step = mathParseur.parseExpression((String) parameters.get(2));
-				int repeats = (int)((end-start+1)/step);
+				String start = (String) parameters.get(0);
+				String end = (String) parameters.get(1);
+				String step = (String) parameters.get(2);
 				List<AbstractExpression> expressions = new ArrayList<AbstractExpression>();
 				for(int i=3; i<parameters.size(); i++){
 					expressions.add((AbstractExpression) parameters.get(i));
 				}
-				retour = new EFor(repeats, expressions);
+				retour = new EFor(start, end, step, expressions);
 				break;
 				
 			case If:

@@ -54,7 +54,7 @@ public class Client {
 	}
 	
 	/**
-	 * Evalue les expression de l'arbre d'expressions
+	 * Evalue les ModelExpressions de l'arbre d'expressions
 	 */
 	public void evaluate(){
 		for(AbstractExpression e : this.expressionTree){

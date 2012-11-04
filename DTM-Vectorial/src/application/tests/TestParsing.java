@@ -11,7 +11,9 @@ public class TestParsing {
 
 	public static void main(String[] args){
 		
-		Context context = new Context(new Model());
+		MathModel mathModel = new SimpleMathModel();
+		Model model = new Model();
+		Context context = new Context(model, mathModel);
 		Parser parser = new SimpleParser(new File("test.dtm"));
 		Client client = new Client(context, parser);
 		client.evaluate();

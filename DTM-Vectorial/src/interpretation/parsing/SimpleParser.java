@@ -1,6 +1,7 @@
 package interpretation.parsing;
 
 import interpretation.expressions.AbstractExpression;
+import interpretation.expressions.math.ENumber;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -17,26 +18,19 @@ public class SimpleParser implements Parser{
 	 */
 	private String script;
 	
-	/**
-	 * Le parseur d'expressions mathématiques
-	 */
-	private MathParser mathParser;
-	
 	public SimpleParser(File file){
 		Scanner sc;
 		try {
 			sc = new Scanner(file).useDelimiter("\\A");
 			this.script = sc.hasNext()? sc.next() : "";
-			this.mathParser = new SimpleMathParser();
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
 	
-	public SimpleParser(String script, MathParser mathParser){
+	public SimpleParser(String script){
 		this.script = script;
-		this.mathParser = mathParser;
 	}
 	
 	public List<AbstractExpression> parse() throws Exception {
@@ -70,12 +64,12 @@ public class SimpleParser implements Parser{
 			line = sc.nextLine().trim();
 		}while(line.isEmpty() && sc.hasNextLine());
 
-		// CAS 0 : DECLARATION OU MODIFICATION D´ENTIER
+		// CAS 0 : DECLARATION OU MODIFICATION DE NOMBRE
 		String[] split = line.split("=");
 		if(split.length == 2){
 			String name = split[0].trim();
-			String valeur = split[1].trim();
-			mathParser.addVariable(name, mathParser.parseExpression(valeur));
+			String expression = split[1].trim();
+			retour = new ENumber(name, expression);
 		}
 		
 		// SYNTAXE CORRESPONDANT A UNE EXPRESSION
@@ -88,7 +82,7 @@ public class SimpleParser implements Parser{
 				String name = getFunctionName(split[1]);
 				List<Object> params = getFunctionParameters(split[1]);
 				params.add(0, name);
-				retour = Sentence.getExpression(split[0], params, this.mathParser);
+				retour = Sentence.getExpression(split[0], params);
 			}
 			else
 			if(split.length == 1){
@@ -96,7 +90,7 @@ public class SimpleParser implements Parser{
 				String syntax = getFunctionName(split[0]);
 				if(Sentence.isSingleLineInstruction(syntax)){
 					retour = Sentence.getExpression(syntax,
-							getFunctionParameters(split[0]), this.mathParser);
+							getFunctionParameters(split[0]));
 				}
 				
 				// CAS 3 : STRUCTURE DE CONTROLE OU BOUCLE
@@ -109,9 +103,9 @@ public class SimpleParser implements Parser{
 						// On récupère le contenu du bloc
 						sc.useDelimiter("[}]");
 						String bloc = sc.next();
-						SimpleParser sp = new SimpleParser(bloc, this.mathParser);
+						SimpleParser sp = new SimpleParser(bloc);
 						params.addAll(sp.parse());
-						retour = Sentence.getExpression(syntax, params, this.mathParser);
+						retour = Sentence.getExpression(syntax, params);
 						
 						sc.nextLine();
 					}

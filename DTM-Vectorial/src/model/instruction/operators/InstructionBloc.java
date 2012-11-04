@@ -1,8 +1,8 @@
 package model.instruction.operators;
 import java.util.List;
 
-import model.Instruction;
 import model.Picture;
+import model.instruction.Instruction;
 import model.instruction.Operator;
 
 

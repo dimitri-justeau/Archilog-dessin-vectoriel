@@ -2,9 +2,9 @@ package model.instruction.functions;
 import java.util.ArrayList;
 import java.util.List;
 
-import model.Instruction;
 import model.Picture;
 import model.instruction.Function;
+import model.instruction.Instruction;
 import model.variables.Bezier;
 import model.variables.Circle;
 import model.variables.Color;

@@ -1,25 +1,21 @@
 Picture check(450,200)
 
 i=0
+j=0
 
 for(0,10,1){
-	
-	i=i+20
-	
-	Color Rouge(200,0,0)
+		
+	Color Rouge(200-j,0+i,0)
 	Color Bleu(0,0,200)
 	Color Green(0,250,0)
-	Point p1(i+30,50)
-	Point p2(i+90,150)
-	Point p3(i+30,90)
-	Point p4(i+150,10)
+	Point p1(i+30,50+j)
+	Point p2(i+90,150+j)
+	Point p3(i+30,90+j)
+	Point p4(i+150,10+j)
 	Bezier bezier(p1,p2,p3,p4)
 	Pen pen(null,5)
 	drawPath(check,bezier,pen,Rouge)
 	
+	i=i+30
+	j=j+5
 }
-
-Point p4-1(250,120)
-Point p4-2(290,140)
-Point p4-3(310,140)
-Point p4-4(350,120)

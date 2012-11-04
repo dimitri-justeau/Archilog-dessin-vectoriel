@@ -2,7 +2,7 @@ package rendering.java2d.renderers;
 
 import java.awt.Graphics2D;
 
-import model.Instruction;
+import model.instruction.Instruction;
 import model.instruction.functions.DrawSmiley;
 import rendering.java2d.FactoryGraphics2D;
 import rendering.java2d.RendererGraphics2D;
