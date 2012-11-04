@@ -3,6 +3,7 @@ Picture check(450,200)
 Color Rouge(200,0,0)
 Color Bleu(0,0,200)
 Color Green(0,250,0)
+Color Black(0,0,0)
 
 Point p1(30,50)
 Point p2(90,150)
@@ -51,3 +52,7 @@ drawPath(check,circle,pen2,Green)
 Point center2(255,60)
 Circle circle2(center2,10)
 drawPath(check,circle2,pen2,Green)
+
+Point labelPoint(300,100)
+drawLabel(check, Black, 12, labelPoint, Les boucles ont l'air de bien fonctionner !)
+

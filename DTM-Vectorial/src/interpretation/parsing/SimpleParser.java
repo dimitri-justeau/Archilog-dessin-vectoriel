@@ -168,7 +168,7 @@ public class SimpleParser implements Parser{
 		if(m.find()){
 			retour = m.group();
 		}
-		retour = retour.substring(1);
+			retour = retour.substring(1);
 		retour = retour.substring(0, retour.length()-1);
 		
 		// On stocke les paramètres

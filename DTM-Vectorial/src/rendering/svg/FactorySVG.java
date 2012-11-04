@@ -8,6 +8,7 @@ import model.Picture;
 import model.instruction.Function;
 import model.instruction.Instruction;
 import model.instruction.Operator;
+import model.instruction.functions.DrawLabel;
 import model.instruction.functions.DrawPath;
 import model.instruction.functions.DrawSmiley;
 import model.instruction.operators.InstructionBloc;
@@ -85,6 +86,9 @@ public class FactorySVG {
 			
 			else if ( ins instanceof DrawSmiley ){
 				return new DrawSmileySVG(ins);
+			}
+			else if (ins instanceof DrawLabel){
+				return new DrawLabelSVG((DrawLabel) ins);
 			}
 		}
 		return null;

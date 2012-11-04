@@ -34,6 +34,7 @@ public enum Sentence {
 	// FUNCTIONS
 	drawPath, /*done*/
 	drawSmiley, /*done*/
+	drawLabel,
 	
 	// OPERATORS
 	If, 
@@ -152,6 +153,15 @@ public enum Sentence {
 				position = (String) parameters.get(3);
 				retour = new EDrawSmiley(picture, color, size, position);
 				break;
+			
+			case drawLabel:
+				picture = (String) parameters.get(0);
+				color = (String) parameters.get(1);
+				String size2 = (String) parameters.get(2);
+				position = (String) parameters.get(3);
+				String label = (String) parameters.get(4);
+				retour = new EDrawLabel(picture, color, size2, position, label);
+				break;
 				
 			// OPERATORS
 			case For:
@@ -169,7 +179,7 @@ public enum Sentence {
 				String assertion = (String) parameters.get(0);
 				List<AbstractExpression> e1 = (List<AbstractExpression>) parameters.get(1);
 				List<AbstractExpression> e2 = (List<AbstractExpression>) parameters.get(2);
-				retour = new EIfElse(assertion, e1, e2);
+				//retour = new EIfElse(assertion, e1, e2);
 				break;
 				
 			default:

@@ -1,5 +1,7 @@
 Picture dessin(600,300)
 
+
+
 i=0
 j=0
 
@@ -36,3 +38,8 @@ if(1<0){
 else{
 	Point p(k+15,150)
 }
+
+
+Point labelPoint(200,130)
+Color black(0,0,0)
+drawLabel(dessin,black,24,labelPoint,AAAAAAAAAAHHHH!!!!!)
