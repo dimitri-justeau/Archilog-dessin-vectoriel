@@ -112,7 +112,30 @@ public class SimpleParser implements Parser{
 					
 					// CAS 3-2 : STRUCTURE A PLUSIEURS BLOCS
 					else{
-	
+						// CAS 3-3 : STRUCTURE A DEUX BLOCS
+						List<Object> params = new ArrayList<Object>();
+						params.addAll(getFunctionParameters(split[0]));
+						// On récupère le contenu du bloc
+						sc.useDelimiter("[}]");
+						String bloc1 = sc.next();
+
+						SimpleParser sp1 = new SimpleParser(bloc1);
+						List<AbstractExpression> l1 = sp1.parse();
+		
+						sc.nextLine();
+						sc.nextLine();
+
+						sc.useDelimiter("[}]");
+						String bloc2 = sc.next();
+						SimpleParser sp2 = new SimpleParser(bloc2);
+						List<AbstractExpression> l2 = sp2.parse();
+						
+						params.add(l1);
+						params.add(l2);
+
+						retour = Sentence.getExpression(syntax, params);
+						
+						sc.nextLine();
 					}
 				}
 			}

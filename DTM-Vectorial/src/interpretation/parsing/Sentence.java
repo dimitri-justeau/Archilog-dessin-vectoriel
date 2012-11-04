@@ -166,6 +166,10 @@ public enum Sentence {
 				break;
 				
 			case If:
+				String assertion = (String) parameters.get(0);
+				List<AbstractExpression> e1 = (List<AbstractExpression>) parameters.get(1);
+				List<AbstractExpression> e2 = (List<AbstractExpression>) parameters.get(2);
+				retour = new EIfElse(assertion, e1, e2);
 				break;
 				
 			default:

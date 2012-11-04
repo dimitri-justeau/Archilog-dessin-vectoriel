@@ -10,7 +10,7 @@ for(0,10,1){
 	Point p2(i+45,75+j)
 	Point p3(i+15,45+j)
 	Point p4(i+75,5+j)
-	Bezier bezier(p1,p2,p3,p4,)
+	Bezier bezier(p1,p2,p3,p4)
 	Pen pen(null,5)
 	drawPath(dessin,bezier,pen,c1)
 	
@@ -25,13 +25,14 @@ drawSmiley(dessin,c2,120,p4)
 
 k = 0
 
-for(0,15,2){
-
+if(1<0){
 	Color c3(0+k/3,0+k,255-k/3)
 	Point p(k+15,150)
 	Square carre(p,60)
 	drawPath(dessin,carre,pen,c3)
 	
 	k=k+70
-	
+}
+else{
+	Point p(k+15,150)
 }

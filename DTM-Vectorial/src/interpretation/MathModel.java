@@ -19,4 +19,12 @@ public interface MathModel {
 	 * @param value
 	 */
 	public void addNumber(Number number);
+	
+	/**
+	 * 
+	 * @param assertion
+	 * @return true si assertion est vrai
+	 * @throws ParseException 
+	 */
+	public boolean evaluate(String assertion) throws ParseException;
 }

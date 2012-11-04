@@ -24,4 +24,10 @@ public class SimpleMathModel implements MathModel{
 		jep.addVariable(number.getName(), number.getValue());
 	}
 
+	public boolean evaluate(String assertion) throws ParseException {
+		double b = (Double) jep.evaluate(jep.parse(assertion));
+		boolean retour = b == 1.0 ? true : false;
+		return retour;
+	}
+
 }
