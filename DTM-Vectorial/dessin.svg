@@ -38,13 +38,15 @@
     ><g font-family="&apos;Calibri&apos;" font-size="24" stroke-width="5"
     ><text x="200" xml:space="preserve" y="130" stroke="none"
       >AAAAAAAAAAHHHH!!!!!</text
-      ><polygon points=" 50 50 50 70 130 70 150 50" stroke="none"
-      /><polygon points=" 50 90 50 110 110 110 90 100 110 90" stroke="none"
-      /><polygon points=" 50 130 50 150 150 150 130 130" stroke="none"
-      /><polygon points=" 153 50 153 150 173 150 173 70" stroke="none"
-      /><polygon points=" 193 90 193 150 213 150 213 90 203 110" stroke="none"
-      /><polygon points=" 233 70 233 150 253 150 253 50" stroke="none"
-    /></g
+      ><polygon fill="rgb(55,232,32)" points=" 50 50 50 70 130 70 150 50" stroke="none"
+      /><polygon fill="rgb(55,232,32)" points=" 50 90 50 110 110 110 90 100 110 90" stroke="none"
+      /><polygon fill="rgb(55,232,32)" points=" 50 130 50 150 150 150 130 130" stroke="none"
+      /><polygon fill="rgb(55,232,32)" points=" 153 50 153 150 173 150 173 70" stroke="none"
+      /><polygon fill="rgb(55,232,32)" points=" 193 90 193 150 213 150 213 90 203 110" stroke="none"
+      /><polygon fill="rgb(55,232,32)" points=" 233 70 233 150 253 150 253 50" stroke="none"
+      /><text fill="rgb(55,232,32)" x="40" xml:space="preserve" font-size="50" y="200" stroke="none"
+      >APPROVED</text
+    ></g
   ></g
 ></svg
 >

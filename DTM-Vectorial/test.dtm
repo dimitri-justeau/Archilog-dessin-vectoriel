@@ -43,4 +43,6 @@ drawLabel(dessin,black,24,labelPoint,AAAAAAAAAAHHHH!!!!!)
 
 Point emn(50,50)
 
-drawEMN(dessin,black,emn,200,100)
+note = 11
+
+approval(dessin,note,emn,100)

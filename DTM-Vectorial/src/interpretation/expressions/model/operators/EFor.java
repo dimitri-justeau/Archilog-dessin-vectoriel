@@ -2,7 +2,6 @@ package interpretation.expressions.model.operators;
 
 import interpretation.Context;
 import interpretation.expressions.AbstractExpression;
-import interpretation.expressions.model.InstructionExpression;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -11,7 +10,7 @@ import org.nfunk.jep.ParseException;
 
 import model.ModelObject;
 
-public class EFor extends InstructionExpression{
+public class EFor extends UsingBlocExpression{
 
 	List<AbstractExpression> expressionsBloc;
 	String start, end, step;

@@ -7,9 +7,8 @@ import org.nfunk.jep.ParseException;
 import model.ModelObject;
 import interpretation.Context;
 import interpretation.expressions.AbstractExpression;
-import interpretation.expressions.model.InstructionExpression;
 
-public class EIfElse extends InstructionExpression{
+public class EIfElse extends UsingBlocExpression{
 	
 	private List<AbstractExpression> expressionsBlocTrue, expressionBlocFalse;
 	private String assertion;

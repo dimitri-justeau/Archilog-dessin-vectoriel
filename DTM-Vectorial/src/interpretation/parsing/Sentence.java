@@ -41,7 +41,8 @@ public enum Sentence {
 	// OPERATORS
 	If, /*done*/
 	For, /*done*/
-	
+	While, /*done*/
+	approval, /*done*/
 	;
 
 	/**
@@ -193,6 +194,15 @@ public enum Sentence {
 				retour = new EFor(start, end, step, expressions);
 				break;
 				
+			case While:
+				String condition = (String) parameters.get(0);
+				expressions = new ArrayList<AbstractExpression>();
+				for(int i=1; i<parameters.size(); i++){
+					expressions.add((AbstractExpression) parameters.get(i));
+				}
+				retour = new EWhile(expressions, condition);
+				break;	
+				
 			case If:
 				String assertion = (String) parameters.get(0);
 				if(parameters.get(1) instanceof List<?> && 
@@ -211,6 +221,14 @@ public enum Sentence {
 				}
 				break;
 				
+			case approval:
+				picture = (String) parameters.get(0);
+				String note = (String) parameters.get(1);
+				position = (String) parameters.get(2);
+				size = (String) parameters.get(3);
+				retour = new EApproval(picture, note, position, size);
+				break;
+				
 			default:
 				break;
 			}
@@ -224,7 +242,7 @@ public enum Sentence {
 	 */
 	public static boolean isSingleLineInstruction(String syntax){
 		Sentence s = getSentence(syntax);
-		return (s!=null && s!=If && s!=For);
+		return (s!=null && s!=If && s!=For && s!=While);
 	}
 	
 	/**
@@ -234,7 +252,7 @@ public enum Sentence {
 	 */
 	public static boolean isSingleBlocStructure(String syntax){
 		Sentence s = getSentence(syntax);
-		return (s == For);
+		return (s == For || s==While);
 	}
 	
 	/**
@@ -245,10 +263,12 @@ public enum Sentence {
 		Sentence s = null;
 		if(syntax.equals("if")){
 			s = If;
-		}
-		else
+		} else
 		if(syntax.equals("for")){
 			s = For;
+		} else
+		if(syntax.equals("while")){
+			s = While;
 		}
 		else{
 			try{
