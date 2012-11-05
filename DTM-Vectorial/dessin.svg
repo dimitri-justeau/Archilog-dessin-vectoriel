@@ -30,6 +30,20 @@
       /><circle fill="none" stroke-width="20" r="0.5" cx="525.5" cy="63.5" stroke="rgb(100,0,230)"
       /><path fill="none" stroke-width="2" d="M465 95 C494 111 496 111 525 95" stroke="rgb(100,0,230)"
       /><path fill="none" stroke-width="2" d="M465 95 C494 111 496 111 525 95" stroke="rgb(100,0,230)"
+      /><line y2="210" fill="none" x1="15" x2="15" stroke="blue" y1="150"
+      /><line y2="210" fill="none" x1="15" x2="75" stroke="blue" y1="210"
+      /><line y2="150" fill="none" x1="75" x2="75" stroke="blue" y1="210"
+      /><line y2="150" fill="none" x1="75" x2="15" stroke="blue" y1="150"
+    /></g
+    ><g font-family="&apos;Calibri&apos;" font-size="24" stroke-width="5"
+    ><text x="200" xml:space="preserve" y="130" stroke="none"
+      >AAAAAAAAAAHHHH!!!!!</text
+      ><polygon points=" 50 50 50 70 130 70 150 50" stroke="none"
+      /><polygon points=" 50 90 50 110 110 110 90 100 110 90" stroke="none"
+      /><polygon points=" 50 130 50 150 150 150 130 130" stroke="none"
+      /><polygon points=" 153 50 153 150 173 150 173 70" stroke="none"
+      /><polygon points=" 193 90 193 150 213 150 213 90 203 110" stroke="none"
+      /><polygon points=" 233 70 233 150 253 150 253 50" stroke="none"
     /></g
   ></g
 ></svg

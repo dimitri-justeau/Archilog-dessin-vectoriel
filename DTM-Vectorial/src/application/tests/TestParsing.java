@@ -3,7 +3,6 @@ package application.tests;
 import java.io.File;
 
 import model.Model;
-import rendering.java2d.VisitorGraphics2D;
 import rendering.svg.VisitorSVG;
 import interpretation.parsing.*;
 import interpretation.*;

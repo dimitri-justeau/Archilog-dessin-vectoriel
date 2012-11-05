@@ -1,7 +1,5 @@
 Picture dessin(600,300)
 
-
-
 i=0
 j=0
 
@@ -27,7 +25,7 @@ drawSmiley(dessin,c2,120,p4)
 
 k = 0
 
-if(1<0){
+if(1<10){
 	Color c3(0+k/3,0+k,255-k/3)
 	Point p(k+15,150)
 	Square carre(p,60)
@@ -36,10 +34,13 @@ if(1<0){
 	k=k+70
 }
 else{
-	Point p(k+15,150)
-}
 
+}
 
 Point labelPoint(200,130)
 Color black(0,0,0)
 drawLabel(dessin,black,24,labelPoint,AAAAAAAAAAHHHH!!!!!)
+
+Point emn(50,50)
+
+drawEMN(dessin,black,emn,200,100)

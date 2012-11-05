@@ -35,8 +35,7 @@ public class SimpleParser implements Parser{
 	
 	public List<AbstractExpression> parse() throws Exception {
 		List<AbstractExpression> retour = new ArrayList<AbstractExpression>();
-		
-		while(!(this.script.isEmpty())){
+		while(!(this.script.trim().isEmpty())){
 			AbstractExpression next = this.nextInstruction();
 			if(next != null){
 				retour.add(next);
@@ -63,7 +62,7 @@ public class SimpleParser implements Parser{
 		do{
 			line = sc.nextLine().trim();
 		}while(line.isEmpty() && sc.hasNextLine());
-
+		
 		// CAS 0 : DECLARATION OU MODIFICATION DE NOMBRE
 		String[] split = line.split("=");
 		if(split.length == 2){

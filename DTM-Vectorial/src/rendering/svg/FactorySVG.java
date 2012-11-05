@@ -8,9 +8,11 @@ import model.Picture;
 import model.instruction.Function;
 import model.instruction.Instruction;
 import model.instruction.Operator;
+import model.instruction.functions.DrawEmn;
 import model.instruction.functions.DrawLabel;
 import model.instruction.functions.DrawPath;
 import model.instruction.functions.DrawSmiley;
+import model.instruction.functions.FillShape;
 import model.instruction.operators.InstructionBloc;
 import model.variables.Bezier;
 import model.variables.Circle;
@@ -90,9 +92,14 @@ public class FactorySVG {
 			else if (ins instanceof DrawLabel){
 				return new DrawLabelSVG((DrawLabel) ins);
 			}
+			else if(ins instanceof DrawEmn) {
+				return new DrawEmnSvg(ins);
+			}
+			else if(ins instanceof FillShape){
+				return new FillShapeSVG(ins);
+			}	
 		}
 		return null;
 	}
-
 
 }

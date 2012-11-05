@@ -8,21 +8,13 @@ import model.Picture;
 import model.instruction.Function;
 import model.instruction.Instruction;
 import model.instruction.Operator;
-import model.instruction.functions.DrawLabel;
-import model.instruction.functions.DrawPath;
-import model.instruction.functions.DrawSmiley;
+import model.instruction.functions.*;
 import model.instruction.operators.InstructionBloc;
 import model.variables.Bezier;
 import model.variables.Circle;
 import model.variables.Path;
 import model.variables.Polygon;
-import rendering.java2d.renderers.DrawBezierGraphics2D;
-import rendering.java2d.renderers.DrawCircleGraphics2D;
-import rendering.java2d.renderers.DrawLabelGraphics2D;
-import rendering.java2d.renderers.DrawPolygoneGraphics2D;
-import rendering.java2d.renderers.DrawSmileyGraphics2D;
-import rendering.java2d.renderers.InstructionBlocGraphics2D;
-
+import rendering.java2d.renderers.*;
 
 
 /**
@@ -95,6 +87,12 @@ public class FactoryGraphics2D {
 			}
 			else if ( ins instanceof DrawLabel ){
 				return new DrawLabelGraphics2D((DrawLabel) ins);
+			}
+			else if(ins instanceof DrawEmn) {
+				return new DrawEmnGraphics2D(ins);
+			}
+			else if(ins instanceof FillShape){
+				return new FillShapeGraphics2D(ins);
 			}
 		}
 		return null;

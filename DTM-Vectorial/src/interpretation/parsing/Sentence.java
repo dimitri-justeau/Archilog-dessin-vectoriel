@@ -34,10 +34,12 @@ public enum Sentence {
 	// FUNCTIONS
 	drawPath, /*done*/
 	drawSmiley, /*done*/
-	drawLabel,
+	drawLabel, /*done*/
+	drawEMN, /*done*/
+	fillShape, /*done*/
 	
 	// OPERATORS
-	If, 
+	If, /*done*/
 	For, /*done*/
 	
 	;
@@ -163,6 +165,22 @@ public enum Sentence {
 				retour = new EDrawLabel(picture, color, size2, position, label);
 				break;
 				
+			case drawEMN:
+				picture = (String) parameters.get(0);
+				color = (String) parameters.get(1);
+				position = (String) parameters.get(2);
+				String largeur = (String) parameters.get(3);
+				String hauteur = (String) parameters.get(4);
+				retour = new EDrawEMN(picture, color, position, largeur, hauteur);
+				break;	
+				
+			case fillShape:
+				picture = (String) parameters.get(0);
+				String shape = (String) parameters.get(1);
+				color = (String) parameters.get(2);
+				retour =  new EFillShape(picture, shape, color);
+				break;	
+				
 			// OPERATORS
 			case For:
 				String start = (String) parameters.get(0);
@@ -177,9 +195,20 @@ public enum Sentence {
 				
 			case If:
 				String assertion = (String) parameters.get(0);
-				List<AbstractExpression> e1 = (List<AbstractExpression>) parameters.get(1);
-				List<AbstractExpression> e2 = (List<AbstractExpression>) parameters.get(2);
-				//retour = new EIfElse(assertion, e1, e2);
+				if(parameters.get(1) instanceof List<?> && 
+						parameters.get(2) instanceof List<?>){
+					List<?> l1 = (List<?>) parameters.get(1);
+					List<?> l2 = (List<?>) parameters.get(2);
+					List<AbstractExpression> e1 = new ArrayList<AbstractExpression>();
+					List<AbstractExpression> e2 = new ArrayList<AbstractExpression>();
+					for(Object o : l1){
+						e1.add((AbstractExpression) o);
+					}
+					for(Object o : l2){
+						e2.add((AbstractExpression) o);
+					}
+					retour = new EIfElse(assertion, e1, e2);
+				}
 				break;
 				
 			default:
